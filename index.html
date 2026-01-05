@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- SEO Meta Tags -->
+    <meta name="description" content="Hair Studio Picasso offers premium haircuts, styling, coloring, and treatments. Experience artistry, precision, and personalized beauty in every cut.">
+    <meta name="keywords" content="Hair Studio Picasso, hair salon, hairstylist, haircuts, hair coloring, hair styling, luxury hair studio">
+    <meta name="author" content="Hair Studio Picasso">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Hair Studio Picasso - Artistry in Every Cut">
+    <meta property="og:description" content="Premium hair salon specializing in haircuts, styling, coloring, and treatments. Book your appointment via WhatsApp or phone.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hairstudiopicasso.com">
+    <meta property="og:image" content="https://www.hairstudiopicasso.com/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hair Studio Picasso - Artistry in Every Cut">
+    <meta name="twitter:description" content="Luxury hair salon offering expert cuts, styling, and coloring. Reservations via WhatsApp or phone only.">
+    <meta name="twitter:image" content="https://www.hairstudiopicasso.com/og-image.jpg">
+
+    <!-- Mobile / Theme -->
+    <meta name="theme-color" content="#000000">
+    <title>Hair Studio Picasso - Artistry in Every Cut</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --gold: #D4AF37;
+            --gray: #F5F5F5;
+            --dark-gray: #333333;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--black);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://i.imgur.com/rbwVwvx.jpeg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            background-color: var(--gold);
+            color: var(--black);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--black);
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        #services {
+            background-color: var(--gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .service-card p {
+            color: var(--dark-gray);
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            height: 350px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(212, 175, 55, 0);
+            transition: background-color 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            background-color: rgba(212, 175, 55, 0.3);
+        }
+
+        /* Reservation Section */
+        #reservation {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+        }
+
+        #reservation h2 {
+            color: var(--white);
+        }
+
+        #reservation h2::after {
+            background-color: var(--gold);
+        }
+
+        .reservation-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .reservation-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--gray);
+        }
+
+        .reservation-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-reservation {
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border: 2px solid var(--gold);
+            background-color: transparent;
+            color: var(--gold);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .btn-reservation:hover {
+            background-color: var(--gold);
+            color: var(--black);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-item strong {
+            color: var(--gold);
+        }
+
+        .footer-item a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-item a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--black);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .reservation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Hair Studio Picasso</div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+                <li><a href="#reservation" onclick="closeMenu()">Reservation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Hair Studio Picasso</h1>
+        <p>Artistry in Every Cut</p>
+        <a href="#reservation" class="btn-primary">Reserve Now</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <p>Welcome to Hair Studio Picasso, where creativity meets precision. We are a premium hair studio dedicated to transforming your vision into reality. Our talented team of stylists combines artistic expertise with personalized service to ensure every client leaves feeling confident and beautiful. From classic cuts to bold transformations, we treat each head of hair as our canvas, creating masterpieces tailored to your unique style and personality.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Haircuts</h3>
+                <p>Precision cuts tailored to your face shape and personal style, crafted by our expert stylists.</p>
+            </div>
+            <div class="service-card">
+                <h3>Styling & Blowouts</h3>
+                <p>Professional styling and luxurious blowouts for any occasion, leaving you red-carpet ready.</p>
+            </div>
+            <div class="service-card">
+                <h3>Hair Coloring</h3>
+                <p>From subtle highlights to bold transformations, our color specialists bring your vision to life.</p>
+            </div>
+            <div class="service-card">
+                <h3>Hair Treatments</h3>
+                <p>Nourishing treatments that restore health, shine, and vitality to your hair.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://i.imgur.com/rbwVwvx.jpeg" alt="Hair Studio Work 1">
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.imgur.com/rbwVwvx.jpeg" alt="Hair Studio Work 2">
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.imgur.com/rbwVwvx.jpeg" alt="Hair Studio Work 3">
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.imgur.com/rbwVwvx.jpeg" alt="Hair Studio Work 4">
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.imgur.com/rbwVwvx.jpeg" alt="Hair Studio Work 5">
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.imgur.com/rbwVwvx.jpeg" alt="Hair Studio Work 6">
+                <div class="gallery-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation">
+        <h2>Book Your Appointment</h2>
+        <div class="reservation-content">
+            <p>Ready to experience the art of beautiful hair? Reserve your appointment today through WhatsApp or give us a call.</p>
+            <div class="reservation-buttons">
+                <a href="https://wa.me/PHONENUMBER" class="btn-reservation" target="_blank" rel="noopener">Reserve via WhatsApp</a>
+                <a href="tel:+PHONENUMBER" class="btn-reservation">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-title">Hair Studio Picasso</div>
+            <div class="footer-info">
+                <div class="footer-item">
+                    <strong>Phone</strong>
+                    <a href="tel:+PHONENUMBER">+38970779720</a>
+                </div>
+                <div class="footer-item">
+                    <strong>WhatsApp</strong>
+                    <a href="https://wa.me/PHONENUMBER" target="_blank" rel="noopener">Message Us</a>
+                </div>
+                <div class="footer-item">
+                    <strong>Opening Hours</strong>
+                    <span>Monday - Saturday: 9:00 AM - 9:00 PM</span>
+                    <span>Sunday: 9:00 AM - 9:00 PM</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Hair Studio Picasso. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal JavaScript -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
