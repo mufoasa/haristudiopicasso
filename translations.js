@@ -393,7 +393,7 @@ var servicesData = [
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 22 1-1h3l9-9"/><path d="M3 21v-3l9-9"/><path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.4.4a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.4.4Z"/></svg>',
     titleKey: "services.coloring.title",
     descKey: "services.coloring.desc",
-    price: 800,
+    price: 1000,
   },
   {
     id: "beard",
@@ -414,7 +414,7 @@ var servicesData = [
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="m14 8-1.5 6.5L16 20"/><path d="m8 8 1.5 6.5L6 20"/><path d="m10 14.5 2 1 2-1"/></svg>',
     titleKey: "services.kids.title",
     descKey: "services.kids.desc",
-    price: 200,
+    price: 300,
   },
 ]
 
