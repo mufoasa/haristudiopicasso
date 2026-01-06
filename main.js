@@ -44,8 +44,8 @@ const servicesData = [
 const galleryImages = ["image1.jpg", "image2.jpg", "image3.jpg"]
 
 const teamData = [
-  { id: "1", name: "John Doe", image: "john.jpg", roleKey: "team.hairdresser" },
-  { id: "2", name: "Jane Smith", image: "jane.jpg", roleKey: "team.stylist" },
+  { id: "1", name: "Arsim Shasivari", image: "john.jpg", roleKey: "team.hairdresser" },
+  { id: "2", name: "Argjend Sulejmani", image: "jane.jpg", roleKey: "team.stylist" },
 ]
 
 // Initialize website
