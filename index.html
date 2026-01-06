@@ -170,29 +170,58 @@
           </ul>
         </div>
         <form class="booking-form" id="bookingForm">
-          <div class="form-group">
-            <label for="name" data-translate="booking.name">Emri i Plotë</label>
-            <input type="text" id="name" name="name" required>
-            <span class="error-message" id="nameError"></span>
-          </div>
-          <div class="form-group">
-            <label for="phone" data-translate="booking.phone">Numri i Telefonit</label>
-            <input type="tel" id="phone" name="phone" required>
-            <span class="error-message" id="phoneError"></span>
-          </div>
-          <div class="form-group">
-            <label for="service" data-translate="booking.service">Shërbimi</label>
-            <select id="service" name="service" required>
-              <option value="" data-translate="booking.selectService">Zgjidhni shërbimin</option>
-            </select>
-            <span class="error-message" id="serviceError"></span>
-          </div>
-          <div class="form-group">
-            <label for="message" data-translate="booking.message">Mesazh (Opsional)</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full" data-translate="booking.submit">Dërgo Kërkesën</button>
-        </form>
+         <form
+  class="booking-form"
+  id="bookingForm"
+  name="booking"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+>
+  
+  <input type="hidden" name="form-name" value="booking">
+
+
+  <input type="hidden" name="bot-field">
+
+  <div class="form-group">
+    <label for="name" data-translate="booking.name">Emri i Plotë</label>
+    <input type="text" id="name" name="name" required>
+    <span class="error-message" id="nameError"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="phone" data-translate="booking.phone">Numri i Telefonit</label>
+    <input type="tel" id="phone" name="phone" required>
+    <span class="error-message" id="phoneError"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="service" data-translate="booking.service">Shërbimi</label>
+    <select id="service" name="service" required>
+      <option value="" data-translate="booking.selectService">
+        Zgjidhni shërbimin
+      </option>
+    </select>
+    <span class="error-message" id="serviceError"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="message" data-translate="booking.message">
+      Mesazh (Opsional)
+    </label>
+    <textarea id="message" name="message" rows="4"></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary btn-full"
+    data-translate="booking.submit"
+  >
+    Dërgo Kërkesën
+  </button>
+</form>
+
       </div>
     </div>
   </section>
