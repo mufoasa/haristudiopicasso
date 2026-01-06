@@ -302,7 +302,24 @@ window.addEventListener('load', function() {
       </div>
     </div>
   </section>
-<!-- rezervim -->
+<!-- Contact Form -->
+<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <!-- Hidden fields required by Netlify -->
+  <input type="hidden" name="form-name" value="contact">
+  <input type="hidden" name="bot-field">
+
+  <p>
+    <label>Name <input type="text" name="name" required /></label>
+  </p>
+  <p>
+    <label>Email <input type="email" name="email" required /></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+
+<!-- Booking Section -->
 <section class="section booking" id="booking">
   <div class="container">
     <div class="section-header">
@@ -333,6 +350,7 @@ window.addEventListener('load', function() {
         data-netlify="true"
         netlify-honeypot="bot-field"
       >
+        <!-- Hidden fields required by Netlify -->
         <input type="hidden" name="form-name" value="booking">
         <input type="hidden" name="bot-field">
 
@@ -385,7 +403,6 @@ window.addEventListener('load', function() {
     </div>
   </div>
 </section>
-
 
   <!-- Contact Section -->
   <section class="section contact" id="contact">
