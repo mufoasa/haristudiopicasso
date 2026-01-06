@@ -706,6 +706,18 @@ ul {
   min-height: 18px;
 }
 
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #fff;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+
 /* Contact Section */
 .contact {
   background: var(--color-black);
