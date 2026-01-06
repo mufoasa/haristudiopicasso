@@ -136,6 +136,7 @@ ul {
   font-style: italic;
 }
 
+
 .nav-toggle {
   display: flex;
   flex-direction: column;
@@ -772,19 +773,32 @@ ul {
   margin-bottom: 40px;
 }
 
-.footer-logo {
-  font-family: var(--font-heading);
-  font-size: 24px;
-  margin-bottom: 15px;
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* aligns logo and text to left */
+  text-align: left;
+  position: relative;
 }
 
-.footer-logo .logo-accent {
-  font-style: italic;
+.footer-logo-img {
+  max-width: 140px;   /* adjusts logo size */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 5px;
+  position: relative;
+  top: -50px;   /* moves logo up */
+  left: -40px;  /* moves logo left */
 }
 
 .footer-brand p {
   font-size: 14px;
   color: var(--color-light-gray);
+  margin: 0; /* remove default margin */
+  position: relative;
+  top: -45px;  /* move text up near logo */
+  left: -40px; /* move text left to align with logo */
 }
 
 .footer-hours h4,
@@ -835,6 +849,40 @@ ul {
 .footer-bottom p {
   font-size: 13px;
   color: var(--color-light-gray);
+}
+
+.footer-bottom .powered-by a {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+.footer-bottom .powered-by a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-logo-img {
+    max-width: 120px;
+    top: -40px;
+    left: -30px;
+  }
+  .footer-brand p {
+    top: -35px;
+    left: -30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo-img {
+    max-width: 100px;
+    top: -30px;
+    left: -20px;
+  }
+  .footer-brand p {
+    top: -25px;
+    left: -20px;
+  }
 }
 
 /* Modal */
