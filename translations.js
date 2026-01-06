@@ -51,7 +51,7 @@ var translations = {
     "team.subtitle": "Njihuni me Ne",
     "team.title": "Ekipi Ynë",
     "team.role.master": "Mjeshtër & Drejtor",
-    "team.role.senior": "Senior & Manager",
+    "team.role.senior": "General Manager",
     "team.role.colorist": "Stilues",
 
     // Booking
@@ -144,7 +144,7 @@ var translations = {
     "team.subtitle": "Meet Us",
     "team.title": "Our Team",
     "team.role.master": "Master & Owner",
-    "team.role.senior": "Senior & Manager",
+    "team.role.senior": "General Manager",
     "team.role.colorist": "Stylist",
 
     // Booking
@@ -237,7 +237,7 @@ var translations = {
 "team.subtitle": "Запознајте нè",
 "team.title": "Нашиот Тим",
 "team.role.master": "Мајстор и Сопственик",
-"team.role.senior": "Сениор и Менаџер",
+"team.role.senior": "Генерален Менаџер",
 "team.role.colorist": "Стилист",
 
 
@@ -330,7 +330,7 @@ var translations = {
     // Team
     "team.subtitle": "Lernen Sie Uns Kennen",
     "team.title": "Unser Team",
-   "team.role.master": "Master & Owner", "team.role.senior": "Senior & Manager", "team.role.colorist": "Stylist",
+   "team.role.master": "Master & Owner", "team.role.senior": "General Manager", "team.role.colorist": "Stylist",
 
     // Booking
     "booking.subtitle": "Buchen Sie Ihren Besuch",
@@ -438,7 +438,7 @@ var teamData = [
     {
     name: "Adis Ismaili",
     roleKey: "team.role.colorist",
-    image: "https://i.imgur.com/Tt5zbhu.jpeg",
+    image: "https://i.imgur.com/biMudZa.png",
   },
 ]
 
