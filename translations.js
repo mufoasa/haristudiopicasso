@@ -423,7 +423,7 @@ var teamData = [
   {
     name: "Arsim Shasivari",
     roleKey: "team.role.master",
-    image: "https://i.imgur.com/TblI6J9.png",
+    image: "https://i.imgur.com/x4Z57d5.png",
   },
   {
     name: "Argjend Sulejmani",
