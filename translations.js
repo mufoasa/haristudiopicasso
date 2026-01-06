@@ -1,5 +1,5 @@
 // Translations for all supported languages
-const translations = {
+var translations = {
   sq: {
     // Navigation
     "nav.home": "Kryefaqja",
@@ -50,9 +50,9 @@ const translations = {
     // Team
     "team.subtitle": "Njihuni me Ne",
     "team.title": "Ekipi Ynë",
-    "team.role.master": "Master Stilist",
-    "team.role.senior": "Stilist i Lartë",
-    "team.role.colorist": "Specialist Ngjyrosje",
+    "team.role.master": "Mjeshtër & Drejtor",
+    "team.role.senior": "Senior & Manager",
+    "team.role.colorist": "Stilues",
 
     // Booking
     "booking.subtitle": "Rezervoni Vizitën Tuaj",
@@ -143,9 +143,9 @@ const translations = {
     // Team
     "team.subtitle": "Meet Us",
     "team.title": "Our Team",
-    "team.role.master": "Master Stylist",
-    "team.role.senior": "Senior Stylist",
-    "team.role.colorist": "Color Specialist",
+    "team.role.master": "Master & Owner",
+    "team.role.senior": "Senior & Manager",
+    "team.role.colorist": "Stylist",
 
     // Booking
     "booking.subtitle": "Book Your Visit",
@@ -234,11 +234,12 @@ const translations = {
     "gallery.title": "Галерија",
 
     // Team
-    "team.subtitle": "Запознајте Не",
-    "team.title": "Нашиот Тим",
-    "team.role.master": "Мастер Стилист",
-    "team.role.senior": "Виш Стилист",
-    "team.role.colorist": "Специјалист за Боја",
+"team.subtitle": "Запознајте нè",
+"team.title": "Нашиот Тим",
+"team.role.master": "Мајстор и Сопственик",
+"team.role.senior": "Сениор и Менаџер",
+"team.role.colorist": "Стилист",
+
 
     // Booking
     "booking.subtitle": "Резервирајте Посета",
@@ -329,9 +330,7 @@ const translations = {
     // Team
     "team.subtitle": "Lernen Sie Uns Kennen",
     "team.title": "Unser Team",
-    "team.role.master": "Master Stylist",
-    "team.role.senior": "Senior Stylist",
-    "team.role.colorist": "Farbspezialist",
+   "team.role.master": "Master & Owner", "team.role.senior": "Senior & Manager", "team.role.colorist": "Stylist",
 
     // Booking
     "booking.subtitle": "Buchen Sie Ihren Besuch",
@@ -374,79 +373,83 @@ const translations = {
   },
 }
 
-// Services data with prices
-const servicesData = [
+var servicesData = [
   {
     id: "haircut",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>`,
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>',
     titleKey: "services.haircut.title",
     descKey: "services.haircut.desc",
     price: 300,
   },
   {
     id: "styling",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`,
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>',
     titleKey: "services.styling.title",
     descKey: "services.styling.desc",
-    price: 500,
+    price: 0,
   },
   {
     id: "coloring",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 22 1-1h3l9-9"/><path d="M3 21v-3l9-9"/><path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.4.4a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.4.4Z"/></svg>`,
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 22 1-1h3l9-9"/><path d="M3 21v-3l9-9"/><path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.4.4a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.4.4Z"/></svg>',
     titleKey: "services.coloring.title",
     descKey: "services.coloring.desc",
     price: 800,
   },
   {
     id: "beard",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7"/><path d="M6 10c0 4.667 4 8 6 10 2-2 6-5.333 6-10"/><path d="M18 3v7"/><path d="M6 7c2-1 4-1 6-1s4 0 6 1"/></svg>`,
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7"/><path d="M6 10c0 4.667 4 8 6 10 2-2 6-5.333 6-10"/><path d="M18 3v7"/><path d="M6 7c2-1 4-1 6-1s4 0 6 1"/></svg>',
     titleKey: "services.beard.title",
     descKey: "services.beard.desc",
-    price: 200,
+    price: 100,
   },
   {
     id: "treatment",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12-4.6-2.5"/></svg>`,
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12-4.6-2.5"/></svg>',
     titleKey: "services.treatment.title",
     descKey: "services.treatment.desc",
-    price: 600,
+    price: 500,
   },
   {
     id: "kids",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="m14 8-1.5 6.5L16 20"/><path d="m8 8 1.5 6.5L6 20"/><path d="m10 14.5 2 1 2-1"/></svg>`,
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="m14 8-1.5 6.5L16 20"/><path d="m8 8 1.5 6.5L6 20"/><path d="m10 14.5 2 1 2-1"/></svg>',
     titleKey: "services.kids.title",
     descKey: "services.kids.desc",
     price: 200,
   },
 ]
 
-// Team data
-const teamData = [
+// You can use any image URL including Imgur links
+var teamData = [
   {
-    name: "Arben Ahmeti",
+    name: "Arsim Shasivari",
     roleKey: "team.role.master",
-    image: "/professional-male-hairstylist-portrait-dark-backgr.jpg",
+    image: "https://i.imgur.com/TblI6J9.png",
   },
   {
-    name: "Elira Ramadani",
-    roleKey: "team.role.colorist",
-    image: "/professional-female-hairstylist-portrait-dark-back.jpg",
-  },
-  {
-    name: "Driton Selimi",
+    name: "Argjend Sulejmani",
     roleKey: "team.role.senior",
-    image: "/young-male-barber-portrait-dark-background.jpg",
+    image: "https://i.imgur.com/FfkFVjN.jpeg",
+  },
+  {
+    name: "Lavdrim",
+    roleKey: "team.role.colorist",
+    image: "https://i.imgur.com/Tt5zbhu.jpeg",
+  },
+    {
+    name: "Adis Ismaili",
+    roleKey: "team.role.colorist",
+    image: "https://i.imgur.com/Tt5zbhu.jpeg",
   },
 ]
 
-// Gallery data
-const galleryImages = [
-  "/modern-men-haircut-fade-style.jpg",
-  "/women-blonde-balayage-hair.jpg",
-  "/men-beard-grooming-barbershop.jpg",
-  "/women-brunette-hair-styling.jpg",
-  "/modern-men-pompadour-hairstyle.jpg",
-  "/women-red-hair-coloring-salon.jpg",
-  "/men-undercut-hairstyle-trendy.jpg",
-  "/women-curly-hair-styling-professional.jpg",
+// You can use any image URL including Imgur links
+var galleryImages = [
+  "https://i.imgur.com/gqVzYT5.jpeg",
+  "https://i.imgur.com/pMBFaUT.jpeg",
+  "https://i.imgur.com/KLeb9cX.jpeg",
+  "https://i.imgur.com/xEAo6l0.png",
+  "https://i.imgur.com/VQ8UGqL.jpeg",
+  "https://i.imgur.com/i6CXItU.jpeg",
+  "https://i.imgur.com/NDvZ6We.jpeg",
+  "https://i.imgur.com/0JJ6lrR.jpeg",
 ]
