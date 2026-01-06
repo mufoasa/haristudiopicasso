@@ -51,7 +51,7 @@ var translations = {
     "team.subtitle": "Njihuni me Ne",
     "team.title": "Ekipi Ynë",
     "team.role.master": "Mjeshtër & Drejtor",
-    "team.role.senior": "General Manager",
+    "team.role.senior": "Menaxher I Përgjithshëm",
     "team.role.colorist": "Stilues",
 
     // Booking
