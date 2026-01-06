@@ -1,585 +1,310 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- SEO Meta Tags -->
-    <meta name="description" content="Hair Studio Picasso offers premium haircuts, styling, coloring, and treatments. Experience artistry, precision, and personalized beauty in every cut.">
-    <meta name="keywords" content="Hair Studio Picasso, hair salon, hairstylist, haircuts, hair coloring, hair styling, luxury hair studio">
-    <meta name="author" content="Hair Studio Picasso">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Hair Studio Picasso - Artistry in Every Cut">
-    <meta property="og:description" content="Premium hair salon specializing in haircuts, styling, coloring, and treatments. Book your appointment via WhatsApp or phone.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.hairstudiopicasso.com">
-    <meta property="og:image" content="https://www.hairstudiopicasso.com/og-image.jpg">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hair Studio Picasso - Artistry in Every Cut">
-    <meta name="twitter:description" content="Luxury hair salon offering expert cuts, styling, and coloring. Reservations via WhatsApp or phone only.">
-    <meta name="twitter:image" content="https://www.hairstudiopicasso.com/og-image.jpg">
-
-    <!-- Mobile / Theme -->
-    <meta name="theme-color" content="#000000">
-    <title>Hair Studio Picasso - Artistry in Every Cut</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --black: #000000;
-            --white: #FFFFFF;
-            --gold: #D4AF37;
-            --gray: #F5F5F5;
-            --dark-gray: #333333;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            color: var(--dark-gray);
-            line-height: 1.6;
-            background-color: var(--white);
-        }
-
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: var(--black);
-            padding: 1rem 2rem;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--gold);
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        /* Mobile menu toggle */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--gold);
-            transition: all 0.3s ease;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('https://i.imgur.com/rbwVwvx.jpeg') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            margin-top: 70px;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            letter-spacing: 3px;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--gold);
-            letter-spacing: 2px;
-            animation: fadeInUp 1.2s ease;
-        }
-
-        .btn-primary {
-            padding: 1rem 2.5rem;
-            background-color: var(--gold);
-            color: var(--black);
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
-            animation: fadeInUp 1.4s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--black);
-            letter-spacing: 2px;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--gold);
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* Services Section */
-        #services {
-            background-color: var(--gray);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background-color: var(--white);
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--black);
-        }
-
-        .service-card p {
-            color: var(--dark-gray);
-        }
-
-        /* Gallery Section */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            height: 350px;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(212, 175, 55, 0);
-            transition: background-color 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            background-color: rgba(212, 175, 55, 0.3);
-        }
-
-        /* Reservation Section */
-        #reservation {
-            background-color: var(--black);
-            color: var(--white);
-            text-align: center;
-        }
-
-        #reservation h2 {
-            color: var(--white);
-        }
-
-        #reservation h2::after {
-            background-color: var(--gold);
-        }
-
-        .reservation-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .reservation-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: var(--gray);
-        }
-
-        .reservation-buttons {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-reservation {
-            padding: 1.2rem 3rem;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            border: 2px solid var(--gold);
-            background-color: transparent;
-            color: var(--gold);
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
-            display: inline-block;
-        }
-
-        .btn-reservation:hover {
-            background-color: var(--gold);
-            color: var(--black);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-gray);
-            color: var(--white);
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-title {
-            font-size: 1.8rem;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
-        }
-
-        .footer-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-item {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .footer-item strong {
-            color: var(--gold);
-        }
-
-        .footer-item a {
-            color: var(--white);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-item a:hover {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background-color: var(--black);
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 2rem;
-                transition: left 0.3s ease;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            section {
-                padding: 3rem 1rem;
-            }
-
-            section h2 {
-                font-size: 2rem;
-            }
-
-            .reservation-buttons {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .footer-info {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HairStudio Picasso - Premium hair salon in Tetovo offering professional haircuts, styling, coloring, and beard services.">
+  <meta name="keywords" content="hair salon, Tetovo, haircut, styling, coloring, beard, HairStudio Picasso">
+  <meta name="author" content="HairStudio Picasso">
+  <meta property="og:title" content="HairStudio Picasso - Tetovo">
+  <meta property="og:description" content="Premium hair salon in Tetovo">
+  <meta property="og:type" content="website">
+  <title>HairStudio Picasso | Tetovo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <nav>
-            <div class="logo">Hair Studio Picasso</div>
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" onclick="closeMenu()">Home</a></li>
-                <li><a href="#about" onclick="closeMenu()">About</a></li>
-                <li><a href="#services" onclick="closeMenu()">Services</a></li>
-                <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
-                <li><a href="#reservation" onclick="closeMenu()">Reservation</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-text">HairStudio</span>
+        <span class="logo-accent">Picasso</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" data-translate="nav.home">Kryefaqja</a></li>
+        <li><a href="#about" data-translate="nav.about">Rreth Nesh</a></li>
+        <li><a href="#services" data-translate="nav.services">Shërbimet</a></li>
+        <li><a href="#gallery" data-translate="nav.gallery">Galeria</a></li>
+        <li><a href="#team" data-translate="nav.team">Ekipi</a></li>
+        <li><a href="#booking" data-translate="nav.booking">Rezervo</a></li>
+        <li><a href="#contact" data-translate="nav.contact">Kontakt</a></li>
+      </ul>
+      <div class="language-switcher">
+        <button class="lang-btn active" data-lang="sq">SQ</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="mk">MK</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>Hair Studio Picasso</h1>
-        <p>Artistry in Every Cut</p>
-        <a href="#reservation" class="btn-primary">Reserve Now</a>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-video-container">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-young-woman-getting-her-hair-cut-in-a-salon-42696-large.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="title-line">HairStudio</span>
+        <span class="title-accent">Picasso</span>
+      </h1>
+      <p class="hero-tagline" data-translate="hero.tagline">Ku arti takon stilin</p>
+      <p class="hero-location">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Tetovo
+      </p>
+      <a href="#booking" class="btn btn-primary" data-translate="hero.cta">Rezervo Tani</a>
+    </div>
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <div class="about-content">
-            <p>Welcome to Hair Studio Picasso, where creativity meets precision. We are a premium hair studio dedicated to transforming your vision into reality. Our talented team of stylists combines artistic expertise with personalized service to ensure every client leaves feeling confident and beautiful. From classic cuts to bold transformations, we treat each head of hair as our canvas, creating masterpieces tailored to your unique style and personality.</p>
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle" data-translate="about.subtitle">Historia Jonë</span>
+        <h2 class="section-title" data-translate="about.title">Rreth HairStudio Picasso</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="/placeholder.svg?height=500&width=400" alt="HairStudio Picasso Interior">
+          <div class="about-image-accent"></div>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Haircuts</h3>
-                <p>Precision cuts tailored to your face shape and personal style, crafted by our expert stylists.</p>
+        <div class="about-text">
+          <p data-translate="about.description1">
+            Që nga viti 2015, HairStudio Picasso ka qenë destinacioni kryesor për kujdesin premium të flokëve në Tetovë. 
+            Emri ynë pasqyron filozofinë tonë - çdo prerje flokësh është një vepër arti.
+          </p>
+          <p data-translate="about.description2">
+            Ekipi ynë i stilistëve të talentuar kombinon teknikat tradicionale me trendet moderne për të krijuar 
+            pamje të personalizuara që theksojnë bukurinë tuaj natyrore.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">9+</span>
+              <span class="stat-label" data-translate="about.yearsExp">Vite Përvojë</span>
             </div>
-            <div class="service-card">
-                <h3>Styling & Blowouts</h3>
-                <p>Professional styling and luxurious blowouts for any occasion, leaving you red-carpet ready.</p>
+            <div class="stat">
+              <span class="stat-number">5000+</span>
+              <span class="stat-label" data-translate="about.happyClients">Klientë të Kënaqur</span>
             </div>
-            <div class="service-card">
-                <h3>Hair Coloring</h3>
-                <p>From subtle highlights to bold transformations, our color specialists bring your vision to life.</p>
+            <div class="stat">
+              <span class="stat-number">15+</span>
+              <span class="stat-label" data-translate="about.awards">Çmime</span>
             </div>
-            <div class="service-card">
-                <h3>Hair Treatments</h3>
-                <p>Nourishing treatments that restore health, shine, and vitality to your hair.</p>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://i.imgur.com/rbwVwvx.jpeg" alt="Hair Studio Work 1">
-                <div class="gallery-overlay"></div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://i.imgur.com/vx11qu4.jpeg" alt="Hair Studio Work 2">
-                <div class="gallery-overlay"></div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://i.imgur.com/ErKwnO2.jpeg" alt="Hair Studio Work 3">
-                <div class="gallery-overlay"></div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://i.imgur.com/rbwVwvx.jpeg" alt="Hair Studio Work 4">
-                <div class="gallery-overlay"></div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://i.imgur.com/dwty0H4.jpeg" alt="Hair Studio Work 5">
-                <div class="gallery-overlay"></div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://i.imgur.com/rbwVwvx.jpeg" alt="Hair Studio Work 6">
-                <div class="gallery-overlay"></div>
-            </div>
+  <!-- Services Section -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle" data-translate="services.subtitle">Çfarë Ofrojmë</span>
+        <h2 class="section-title" data-translate="services.title">Shërbimet Tona</h2>
+      </div>
+      <div class="services-grid" id="servicesGrid">
+        <!-- Services will be populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle" data-translate="gallery.subtitle">Puna Jonë</span>
+        <h2 class="section-title" data-translate="gallery.title">Galeria</h2>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Gallery will be populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section team" id="team">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle" data-translate="team.subtitle">Njihuni me Ne</span>
+        <h2 class="section-title" data-translate="team.title">Ekipi Ynë</h2>
+      </div>
+      <div class="team-grid" id="teamGrid">
+        <!-- Team will be populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section class="section booking" id="booking">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle" data-translate="booking.subtitle">Rezervoni Vizitën Tuaj</span>
+        <h2 class="section-title" data-translate="booking.title">Caktoni Takim</h2>
+      </div>
+      <div class="booking-container">
+        <div class="booking-info">
+          <h3 data-translate="booking.infoTitle">Pse të na zgjidhni?</h3>
+          <ul class="booking-benefits">
+            <li data-translate="booking.benefit1">✓ Stilistë profesionistë me përvojë</li>
+            <li data-translate="booking.benefit2">✓ Produkte premium për flokët</li>
+            <li data-translate="booking.benefit3">✓ Ambient i rehatshëm dhe elegant</li>
+            <li data-translate="booking.benefit4">✓ Çmime konkurruese</li>
+          </ul>
         </div>
-    </section>
+        <form class="booking-form" id="bookingForm">
+          <div class="form-group">
+            <label for="name" data-translate="booking.name">Emri i Plotë</label>
+            <input type="text" id="name" name="name" required>
+            <span class="error-message" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="phone" data-translate="booking.phone">Numri i Telefonit</label>
+            <input type="tel" id="phone" name="phone" required>
+            <span class="error-message" id="phoneError"></span>
+          </div>
+          <div class="form-group">
+            <label for="service" data-translate="booking.service">Shërbimi</label>
+            <select id="service" name="service" required>
+              <option value="" data-translate="booking.selectService">Zgjidhni shërbimin</option>
+            </select>
+            <span class="error-message" id="serviceError"></span>
+          </div>
+          <div class="form-group">
+            <label for="message" data-translate="booking.message">Mesazh (Opsional)</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" data-translate="booking.submit">Dërgo Kërkesën</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-    <!-- Reservation Section -->
-    <section id="reservation">
-        <h2>Book Your Appointment</h2>
-        <div class="reservation-content">
-            <p>Ready to experience the art of beautiful hair? Reserve your appointment today through WhatsApp or give us a call.</p>
-            <div class="reservation-buttons">
-                <a href="https://wa.me/PHONENUMBER" class="btn-reservation" target="_blank" rel="noopener">Reserve via WhatsApp</a>
-                <a href="tel:+PHONENUMBER" class="btn-reservation">Call Now</a>
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle" data-translate="contact.subtitle">Na Kontaktoni</span>
+        <h2 class="section-title" data-translate="contact.title">Kontakt</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
+            <div class="contact-details">
+              <h4 data-translate="contact.address">Adresa</h4>
+              <p>Rr. Ilirija, Tetovë 1200<br>Maqedonia e Veriut</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-details">
+              <h4 data-translate="contact.phone">Telefoni</h4>
+              <p><a href="tel:+38944123456">+389 44 123 456</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div class="contact-details">
+              <h4>Instagram</h4>
+              <p><a href="https://instagram.com/hairstudiopicasso" target="_blank" rel="noopener">@hairstudiopicasso</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </div>
+            <div class="contact-details">
+              <h4>Facebook</h4>
+              <p><a href="https://facebook.com/hairstudiopicasso" target="_blank" rel="noopener">HairStudio Picasso</a></p>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-title">Hair Studio Picasso</div>
-            <div class="footer-info">
-                <div class="footer-item">
-                    <strong>Phone</strong>
-                    <a href="tel:+PHONENUMBER">+38970779720</a>
-                </div>
-                <div class="footer-item">
-                    <strong>WhatsApp</strong>
-                    <a href="https://wa.me/PHONENUMBER" target="_blank" rel="noopener">Message Us</a>
-                </div>
-                <div class="footer-item">
-                    <strong>Opening Hours</strong>
-                    <span>Monday - Saturday: 9:00 AM - 9:00 PM</span>
-                    <span>Sunday: 9:00 AM - 9:00 PM</span>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2026 Hair Studio Picasso. All rights reserved.
-            </div>
+        <div class="contact-map">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23647.67426611!2d20.95!3d42.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1353ef7d5e9d0001%3A0x1c0a6eb0f6f1df00!2sTetovo%2C%20North%20Macedonia!5e0!3m2!1sen!2s!4v1" 
+            width="100%" 
+            height="350" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="HairStudio Picasso Location">
+          </iframe>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- Minimal JavaScript -->
-    <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3 class="footer-logo">
+            <span>HairStudio</span>
+            <span class="logo-accent">Picasso</span>
+          </h3>
+          <p data-translate="footer.description">Saloni juaj premium i flokëve në Tetovë</p>
+        </div>
+        <div class="footer-hours">
+          <h4 data-translate="footer.hours">Orari i Punës</h4>
+          <ul>
+            <li><span data-translate="footer.monFri">E Hënë - E Premte:</span> 09:00 - 20:00</li>
+            <li><span data-translate="footer.saturday">E Shtunë:</span> 09:00 - 18:00</li>
+            <li><span data-translate="footer.sunday">E Diel:</span> <span data-translate="footer.closed">Mbyllur</span></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4 data-translate="footer.followUs">Na Ndiqni</h4>
+          <div class="social-links">
+            <a href="https://instagram.com/hairstudiopicasso" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://facebook.com/hairstudiopicasso" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 HairStudio Picasso. <span data-translate="footer.rights">Të gjitha të drejtat e rezervuara.</span></p>
+      </div>
+    </div>
+  </footer>
 
-        function closeMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.remove('active');
-        }
-    </script>
+  <!-- Success Modal -->
+  <div class="modal" id="successModal">
+    <div class="modal-content">
+      <div class="modal-icon">✓</div>
+      <h3 data-translate="modal.title">Faleminderit!</h3>
+      <p data-translate="modal.message">Kërkesa juaj u dërgua me sukses. Do t'ju kontaktojmë së shpejti.</p>
+      <button class="btn btn-primary" id="closeModal" data-translate="modal.close">Mbyll</button>
+    </div>
+  </div>
+
+  <script src="translations.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
