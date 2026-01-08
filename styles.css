@@ -810,7 +810,7 @@ ul {
   margin: 0; /* remove default margin */
   position: relative;
   top: -45px;  /* move text up near logo */
-  left: -40px; /* move text left to align with logo */
+  left: -25px; /* move text left to align with logo */
 }
 
 .footer-hours h4,
