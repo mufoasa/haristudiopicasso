@@ -53,6 +53,7 @@ var translations = {
     "team.role.master": "Mjeshtër & Drejtor",
     "team.role.senior": "Menaxher I Përgjithshëm",
     "team.role.colorist": "Stilues",
+    "team.role.helper": "Ndihmës",
 
     // Booking
     "booking.subtitle": "Rezervoni Vizitën Tuaj",
@@ -146,6 +147,7 @@ var translations = {
     "team.role.master": "Master & Owner",
     "team.role.senior": "General Manager",
     "team.role.colorist": "Stylist",
+    "team.role.helper": "Assistant",
 
     // Booking
     "booking.subtitle": "Book Your Visit",
@@ -239,7 +241,7 @@ var translations = {
 "team.role.master": "Мајстор и Сопственик",
 "team.role.senior": "Генерален Менаџер",
 "team.role.colorist": "Стилист",
-
+"team.role.helper": "Помошник",
 
     // Booking
     "booking.subtitle": "Резервирајте Посета",
@@ -330,7 +332,7 @@ var translations = {
     // Team
     "team.subtitle": "Lernen Sie Uns Kennen",
     "team.title": "Unser Team",
-   "team.role.master": "Master & Owner", "team.role.senior": "General Manager", "team.role.colorist": "Stylist",
+   "team.role.master": "Master & Owner", "team.role.senior": "General Manager", "team.role.colorist": "Stylist","team.role.helper": "Assistant",
 
     // Booking
     "booking.subtitle": "Buchen Sie Ihren Besuch",
@@ -439,6 +441,11 @@ var teamData = [
     name: "Adis Ismaili",
     roleKey: "team.role.colorist",
     image: "https://i.imgur.com/biMudZa.png",
+  },
+   {
+    name: "Rilind Qiraki",
+    roleKey: "team.role.helper",
+    image: "https://i.imgur.com/Tt5zbhu.jpeg",
   },
 ]
 
