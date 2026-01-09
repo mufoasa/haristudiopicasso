@@ -318,76 +318,78 @@ window.addEventListener('load', function() {
       <div class="booking-info">
         <h3 data-translate="booking.infoTitle">Pse të na zgjidhni?</h3>
         <ul class="booking-benefits">
-          <li data-translate="booking.benefit1">✓ Stilistë profesionistë me përvojë</li>
-          <li data-translate="booking.benefit2">✓ Produkte premium për flokët</li>
-          <li data-translate="booking.benefit3">✓ Ambient i rehatshëm dhe elegant</li>
-          <li data-translate="booking.benefit4">✓ Çmime konkurruese</li>
+          <li>✓ Stilistë profesionistë me përvojë</li>
+          <li>✓ Produkte premium për flokët</li>
+          <li>✓ Ambient i rehatshëm dhe elegant</li>
+          <li>✓ Çmime konkurruese</li>
         </ul>
       </div>
 
+      <!-- FORM -->
       <form
         class="booking-form"
         id="bookingForm"
         name="booking"
         method="POST"
+        action="/"
         data-netlify="true"
         netlify-honeypot="bot-field"
       >
-        <!-- Netlify required fields -->
+        <!-- Netlify required -->
         <input type="hidden" name="form-name" value="booking">
         <input type="hidden" name="bot-field">
 
         <div class="form-group">
-          <label for="name" data-translate="booking.name">Emri i Plotë</label>
+          <label for="name">Emri i Plotë</label>
           <input type="text" id="name" name="name" required>
-          <span class="error-message" id="nameError"></span>
         </div>
 
         <div class="form-group">
-          <label for="phone" data-translate="booking.phone">Numri i Telefonit</label>
+          <label for="phone">Numri i Telefonit</label>
           <input type="tel" id="phone" name="phone" required>
-          <span class="error-message" id="phoneError"></span>
         </div>
 
         <div class="form-group">
-          <label for="service" data-translate="booking.service">Shërbimi</label>
+          <label for="service">Shërbimi</label>
           <select id="service" name="service" required>
-            <option value="" data-translate="booking.selectService">
-              Zgjidhni shërbimin
-            </option>
+            <option value="">Zgjidhni shërbimin</option>
+            <option value="Prerje Flokësh">Prerje Flokësh</option>
+            <option value="Rregullim Mjekre">Rregullim Mjekre</option>
+            <option value="Stilim">Stilim</option>
           </select>
-          <span class="error-message" id="serviceError"></span>
         </div>
 
         <div class="form-group">
-          <label for="message" data-translate="booking.message">
-            Mesazh (Opsional)
-          </label>
+          <label for="message">Mesazh (Opsional)</label>
           <textarea id="message" name="message" rows="4"></textarea>
         </div>
 
-       
-        <button
-          type="submit"
-          class="btn btn-primary btn-full"
-          data-translate="booking.submit"
-        >
+        <!-- SUBMIT -->
+        <button type="submit" class="btn btn-primary btn-full">
           Dërgo Kërkesën
         </button>
 
-       
+        <!-- WHATSAPP BUTTON -->
         <a
-          href="https://wa.me/38970779720"
-          target="_blank"
+          href="#"
+          id="whatsappBooking"
           class="btn btn-whatsapp btn-full"
         >
           Rezervo përmes WhatsApp
         </a>
 
+        <!-- SUCCESS MESSAGE -->
+        <p
+          id="bookingSuccess"
+          style="display:none; color:#c9a227; text-align:center; margin-top:15px;"
+        >
+          Rezervimi u dërgua me sukses! ✅
+        </p>
       </form>
     </div>
   </div>
 </section>
+
   
   <!-- Contact Section -->
   <section class="section contact" id="contact">
@@ -507,5 +509,34 @@ window.addEventListener('load', function() {
   <!-- Load translations.js BEFORE main.js to ensure translations are available -->
   <script src="translations.js"></script>
   <script src="main.js"></script>
+  <script>
+  document.getElementById("whatsappBooking").addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !phone || !service) {
+      alert("Ju lutemi plotësoni emrin, telefonin dhe shërbimin.");
+      return;
+    }
+
+    const text = `
+📅 Rezervim i Ri
+👤 Emri: ${name}
+📞 Telefoni: ${phone}
+💈 Shërbimi: ${service}
+📝 Mesazh: ${message || "—"}
+    `;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappNumber = "38970779720"; // 
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, "_blank");
+  });
+</script>
+
 </body>
 </html>
