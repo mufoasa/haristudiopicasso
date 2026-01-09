@@ -443,7 +443,7 @@ var teamData = [
     image: "https://i.imgur.com/biMudZa.png",
   },
    {
-    name: "Rilind Qiraki",
+    name: "Rilind Veliu",
     roleKey: "team.role.helper",
     image: "https://i.imgur.com/Tt5zbhu.jpeg",
   },
