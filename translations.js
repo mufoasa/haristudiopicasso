@@ -431,9 +431,9 @@ var teamData = [
     image: "https://i.imgur.com/FfkFVjN.jpeg",
   },
   {
-    name: "Lavdrim",
+    name: "Lavdrim Mamudi",
     roleKey: "team.role.colorist",
-    image: "https://i.imgur.com/Tt5zbhu.jpeg",
+    image: "https://i.imgur.com/fgHl3aB.jpeg",
   },
     {
     name: "Adis Ismaili",
