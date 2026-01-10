@@ -799,17 +799,29 @@ ul {
 }
 
 /* --- Service select styling --- */
-.booking-form select#serviceSelect {
+.booking-form select#service {
   height: 55px;
-  padding: 0 15px;
+  padding: 0 45px 0 15px; /* extra space for custom arrow */
   font-size: 16px;
+  background: var(--color-dark); /* dark background */
+  color: var(--color-white);     /* text color */
+  border: 1px solid var(--color-gray);
+  border-radius: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none; /* remove native arrow in WebKit */
+  -moz-appearance: none;    /* remove native arrow in Firefox */
+  appearance: none;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23c9a227" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 20px;
+}
+
+/* Ensure dropdown options match dark theme */
+.booking-form select#service option {
   background: var(--color-dark);
   color: var(--color-white);
-  border: 1px solid var(--color-gray);
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 
 
