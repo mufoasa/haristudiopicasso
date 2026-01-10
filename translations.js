@@ -11,7 +11,7 @@ var translations = {
     "nav.contact": "Kontakt",
 
     // Hero
-    "hero.tagline": "Ku arti takon stilin",
+    "hero.tagline": "More than a haircut!",
     "hero.cta": "Rezervo Tani",
 
     // About
@@ -106,7 +106,7 @@ var translations = {
     "nav.contact": "Contact",
 
     // Hero
-    "hero.tagline": "Where art meets style",
+    "hero.tagline": "More than a haircut!",
     "hero.cta": "Book Now",
 
     // About
@@ -200,7 +200,7 @@ var translations = {
     "nav.contact": "Контакт",
 
     // Hero
-    "hero.tagline": "Каде уметноста го среќава стилот",
+    "hero.tagline": "More than a haircut!",
     "hero.cta": "Резервирај Сега",
 
     // About
@@ -294,7 +294,7 @@ var translations = {
     "nav.contact": "Kontakt",
 
     // Hero
-    "hero.tagline": "Wo Kunst auf Stil trifft",
+    "hero.tagline": "More than a haircut!",
     "hero.cta": "Jetzt Buchen",
 
     // About
