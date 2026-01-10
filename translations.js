@@ -449,14 +449,13 @@ var teamData = [
   },
 ]
 
-// You can use any image URL including Imgur links
 var galleryImages = [
-  "https://i.imgur.com/gqVzYT5.jpeg",
-  "https://i.imgur.com/pMBFaUT.jpeg",
-  "https://i.imgur.com/KLeb9cX.jpeg",
-  "https://i.imgur.com/xEAo6l0.png",
-  "https://i.imgur.com/VQ8UGqL.jpeg",
-  "https://i.imgur.com/i6CXItU.jpeg",
-  "https://i.imgur.com/NDvZ6We.jpeg",
-  "https://i.imgur.com/0JJ6lrR.jpeg",
-]
+  { type: "image", url: "https://i.imgur.com/gqVzYT5.jpeg" },          // 1
+  { type: "image", url: "https://i.imgur.com/pMBFaUT.jpeg" },          // 2
+  { type: "image", url: "https://i.imgur.com/KLeb9cX.jpeg" },          // 3
+  { type: "video", url: "https://mufoasa.github.io/haristudiopicasso/picasovid.mp4" }, // 4 (video)
+  { type: "image", url: "https://i.imgur.com/VQ8UGqL.jpeg" },          // 5
+  { type: "image", url: "https://i.imgur.com/i6CXItU.jpeg" },          // 6
+  { type: "video", url: "https://mufoasa.github.io/haristudiopicasso/picaso2.mp4" },   // 7 (video)
+  { type: "image", url: "https://i.imgur.com/0JJ6lrR.jpeg" }           // 8
+];
