@@ -678,6 +678,7 @@ ul {
   margin-bottom: 10px;
 }
 
+/* --- Inputs, Textareas, Selects --- */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -707,7 +708,7 @@ ul {
   appearance: none;
 }
 
-/* Make select dropdown options match dark theme */
+/* Dropdown options styling */
 .form-group select option {
   background: var(--color-dark);
   color: var(--color-white);
@@ -742,7 +743,7 @@ ul {
 
 /* --- Date Input Styling --- */
 .booking-form input[type="date"] {
-  height: 55px; /* same height as other inputs */
+  height: 55px;
   padding: 0 15px;
   line-height: 1.2;
   font-size: 16px;
@@ -757,11 +758,13 @@ ul {
   border-radius: 0;
 }
 
+/* Align placeholder/text vertically in WebKit */
 .booking-form input[type="date"]::-webkit-datetime-edit {
   padding: 15px 0;
   color: var(--color-white);
 }
 
+/* Remove extra spin/clear buttons */
 .booking-form input[type="date"]::-webkit-inner-spin-button,
 .booking-form input[type="date"]::-webkit-clear-button {
   display: none;
@@ -769,7 +772,7 @@ ul {
 
 /* --- Time select styling --- */
 .booking-form select#timeSlots {
-  height: 55px; /* same as input */
+  height: 55px;
   padding: 0 15px;
   font-size: 16px;
   background: var(--color-dark);
@@ -783,7 +786,7 @@ ul {
 
 /* --- Staff select styling --- */
 .booking-form select#staff {
-  height: 55px; /* same as other inputs */
+  height: 55px;
   padding: 0 15px;
   font-size: 16px;
   background: var(--color-dark);
@@ -795,6 +798,19 @@ ul {
   appearance: none;
 }
 
+/* --- Service select styling --- */
+.booking-form select#serviceSelect {
+  height: 55px;
+  padding: 0 15px;
+  font-size: 16px;
+  background: var(--color-dark);
+  color: var(--color-white);
+  border: 1px solid var(--color-gray);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 
 
 /* Contact Section */
