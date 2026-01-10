@@ -339,18 +339,19 @@ window.addEventListener('load', function() {
             </select>
         </div>
         
-        <div class="form-group date-time">
-          <div>
-            <label data-translate="booking.date">Data</label>
-            <input type="date" id="bookingDate" name="date" required>
-          </div>
-          <div>
-            <label data-translate="booking.time">Ora</label>
-            <select id="timeSlots" name="time" required>
-              <option value="" data-translate="booking.selectTime">Zgjidhni orën</option>
-            </select>
-          </div>
-        </div>
+       <div class="form-group date-time">
+  <div>
+    <label data-translate="booking.date">Data</label>
+    <input type="date" id="bookingDate" name="date" required 
+           placeholder="" data-translate-placeholder="booking.datePlaceholder">
+  </div>
+  <div>
+    <label data-translate="booking.time">Ora</label>
+    <select id="timeSlots" name="time" required>
+      <option value="" data-translate="booking.selectTime">Zgjidhni orën</option>
+    </select>
+  </div>
+</div>
 
         <div class="form-group">
           <label data-translate="booking.staffLabel">Zgjidhni Stilistin</label>
