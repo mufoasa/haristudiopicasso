@@ -717,6 +717,35 @@ ul {
   background-color: #1ebe5d;
 }
 
+/* Make date input same height as other inputs */
+.booking-form input[type="date"] {
+  height: 55px; /* match your padding + other inputs */
+  padding: 0 15px; /* keep horizontal padding consistent */
+  line-height: 1.2; /* vertical text alignment */
+  font-size: 16px;
+  border: 1px solid var(--color-gray);
+  background: var(--color-dark);
+  color: var(--color-white);
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-appearance: none; /* remove native styling */
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0; /* optional */
+}
+
+/* Align placeholder/text vertically in WebKit */
+.booking-form input[type="date"]::-webkit-datetime-edit {
+  padding: 15px 0;
+  color: var(--color-white);
+}
+
+/* Remove extra spin/clear buttons */
+.booking-form input[type="date"]::-webkit-inner-spin-button,
+.booking-form input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
 
 /* Contact Section */
 .contact {
