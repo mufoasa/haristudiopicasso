@@ -203,7 +203,7 @@ function renderGallery() {
       html += `<img src="${item.url}" alt="Gallery image ${i + 1}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image'">`;
     } else if (item.type === "video") {
       html += `
-        <video autoplay muted loop width="100%" onerror="this.poster='https://via.placeholder.com/400x400?text=Video'">
+        <video autoplay muted loop playsinline width="100%" onerror="this.poster='https://via.placeholder.com/400x400?text=Video'">
           <source src="${item.url}" type="video/mp4">
           Your browser does not support the video tag.
         </video>
