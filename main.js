@@ -37,6 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initSmoothScroll()
 })
 
+// gemini dog
+
+
 // Navigation functionality
 function initNavigation() {
   // Sticky navbar on scroll
@@ -178,37 +181,52 @@ function renderServices() {
   initScrollAnimations()
 }
 
-// Render gallery section
 function renderGallery() {
-  var galleryGrid = document.getElementById("galleryGrid")
+  var galleryGrid = document.getElementById("galleryGrid");
 
   if (!galleryGrid) {
-    console.log("[v0] galleryGrid not found")
-    return
+    console.log("[v0] galleryGrid not found");
+    return;
   }
 
   if (typeof galleryImages === "undefined") {
-    console.log("[v0] galleryImages not available")
-    return
+    console.log("[v0] galleryImages not available");
+    return;
   }
 
-  var html = ""
+  var html = "";
   for (var i = 0; i < galleryImages.length; i++) {
-    html +=
-      '<div class="gallery-item animate-on-scroll">' +
-      '<img src="' +
-      galleryImages[i] +
-      '" alt="Gallery image ' +
-      (i + 1) +
-      '" loading="lazy" onerror="this.src=\'https://via.placeholder.com/400x400?text=Image\'">' +
-      '<div class="gallery-overlay">' +
-      '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>' +
-      "</div>" +
-      "</div>"
+    var item = galleryImages[i];
+    html += '<div class="gallery-item animate-on-scroll">';
+    
+    if (item.type === "image") {
+      html += `<img src="${item.url}" alt="Gallery image ${i + 1}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image'">`;
+    } else if (item.type === "video") {
+      html += `
+        <video autoplay muted loop width="100%" onerror="this.poster='https://via.placeholder.com/400x400?text=Video'">
+          <source src="${item.url}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      `;
+    }
+
+    html += `
+      <div class="gallery-overlay">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          <line x1="11" y1="8" x2="11" y2="14"/>
+          <line x1="8" y1="11" x2="14" y2="11"/>
+        </svg>
+      </div>
+    </div>`;
   }
-  galleryGrid.innerHTML = html
-  initScrollAnimations()
+
+  galleryGrid.innerHTML = html;
+  initScrollAnimations();
 }
+
+
 
 // Render team section
 function renderTeam() {
