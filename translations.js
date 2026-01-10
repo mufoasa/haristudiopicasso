@@ -445,10 +445,10 @@ var teamData = [
   {
     name: "Argjend Sulejmani",
     roleKey: "team.role.senior",
-    image: "https://i.imgur.com/FfkFVjN.jpeg",
+    image: "https://i.imgur.com/uiqu25e.jpeg",
   },
   {
-    name: "Lavdrim Mamudi",
+   name: "Lavdrim Mamudi",
     roleKey: "team.role.colorist",
     image: "https://i.imgur.com/fgHl3aB.jpeg",
   },
