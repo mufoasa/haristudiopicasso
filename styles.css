@@ -659,6 +659,9 @@ ul {
 .booking-form {
   background: var(--color-gray);
   padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .form-group {
@@ -686,6 +689,8 @@ ul {
   border: 1px solid var(--color-gray);
   color: var(--color-white);
   transition: border-color var(--transition-fast);
+  box-sizing: border-box;
+  border-radius: 0;
 }
 
 .form-group input:focus,
@@ -697,13 +702,18 @@ ul {
 
 .form-group select {
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
+/* Make select dropdown options match dark theme */
 .form-group select option {
   background: var(--color-dark);
   color: var(--color-white);
 }
 
+/* Error messages */
 .error-message {
   display: block;
   font-size: 12px;
@@ -712,45 +722,79 @@ ul {
   min-height: 18px;
 }
 
+/* WhatsApp button */
 .btn-whatsapp {
   background-color: #25D366;
   color: #fff;
   text-align: center;
   margin-top: 12px;
+  padding: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .btn-whatsapp:hover {
   background-color: #1ebe5d;
 }
 
-/* Make date input same height as other inputs */
+/* --- Date Input Styling --- */
 .booking-form input[type="date"] {
-  height: 55px; /* match your padding + other inputs */
-  padding: 0 15px; /* keep horizontal padding consistent */
-  line-height: 1.2; /* vertical text alignment */
+  height: 55px; /* same height as other inputs */
+  padding: 0 15px;
+  line-height: 1.2;
   font-size: 16px;
   border: 1px solid var(--color-gray);
   background: var(--color-dark);
   color: var(--color-white);
   width: 100%;
   box-sizing: border-box;
-  -webkit-appearance: none; /* remove native styling */
+  -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 0; /* optional */
+  border-radius: 0;
 }
 
-/* Align placeholder/text vertically in WebKit */
 .booking-form input[type="date"]::-webkit-datetime-edit {
   padding: 15px 0;
   color: var(--color-white);
 }
 
-/* Remove extra spin/clear buttons */
 .booking-form input[type="date"]::-webkit-inner-spin-button,
 .booking-form input[type="date"]::-webkit-clear-button {
   display: none;
 }
+
+/* --- Time select styling --- */
+.booking-form select#timeSlots {
+  height: 55px; /* same as input */
+  padding: 0 15px;
+  font-size: 16px;
+  background: var(--color-dark);
+  color: var(--color-white);
+  border: 1px solid var(--color-gray);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* --- Staff select styling --- */
+.booking-form select#staff {
+  height: 55px; /* same as other inputs */
+  padding: 0 15px;
+  font-size: 16px;
+  background: var(--color-dark);
+  color: var(--color-white);
+  border: 1px solid var(--color-gray);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 
 
 /* Contact Section */
