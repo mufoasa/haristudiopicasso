@@ -72,6 +72,11 @@ var translations = {
     "booking.errorName": "Ju lutem shkruani emrin tuaj",
     "booking.errorPhone": "Ju lutem shkruani numrin e telefonit",
     "booking.errorService": "Ju lutem zgjidhni shërbimin",
+    "booking.date": "Data",
+    "booking.datePlaceholder": "Zgjidhni datën",
+    "booking.time": "Ora",
+    "booking.selectTime": "Zgjidhni orën",
+    "booking.selectStaff": "Zgjidhni stilistin",
 
     // Contact
     "contact.subtitle": "Na Kontaktoni",
@@ -260,6 +265,11 @@ var translations = {
     "booking.errorName": "Ве молиме внесете го вашето име",
     "booking.errorPhone": "Ве молиме внесете го вашиот телефонски број",
     "booking.errorService": "Ве молиме изберете услуга",
+     "booking.date": "Датум",
+    "booking.datePlaceholder": "Изберете датум",
+    "booking.time": "Време",
+    "booking.selectTime": "Изберете време",
+    "booking.selectStaff": "Изберете стилист",
 
     // Contact
     "contact.subtitle": "Контактирајте Не",
@@ -351,6 +361,11 @@ var translations = {
     "booking.errorName": "Bitte geben Sie Ihren Namen ein",
     "booking.errorPhone": "Bitte geben Sie Ihre Telefonnummer ein",
     "booking.errorService": "Bitte wählen Sie eine Leistung",
+    "booking.date": "Datum",
+    "booking.datePlaceholder": "Datum wählen",
+    "booking.time": "Uhrzeit",
+    "booking.selectTime": "Wählen Sie die Uhrzeit",
+    "booking.selectStaff": "Wählen Sie den Stylisten",
 
     // Contact
     "contact.subtitle": "Kontaktieren Sie Uns",
