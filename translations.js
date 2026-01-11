@@ -30,8 +30,9 @@ var translations = {
     "services.title": "Shërbimet Tona",
     "services.haircut.title": "Prerje Flokësh",
     "services.haircut.desc": "Prerje profesionale të personalizuara sipas formës së fytyrës dhe stilit tuaj personal.",
-    "services.styling.title": "Stilim",
-    "services.styling.desc": "Stilim profesional për çdo rast - nga e përditshme deri në evente speciale.",
+"services.hairBeardWash.title": "Flokë + Mjekër + Larje Flokësh",
+"services.hairBeardWash.desc": "Prerje flokësh, rregullim mjekre dhe larje flokësh në një shërbim të vetëm.",
+
     "services.coloring.title": "Ngjyrosje",
     "services.coloring.desc":
       "Ngjyrosje profesionale me produkte premium për rezultate të shkëlqyera dhe të qëndrueshme.",
@@ -130,8 +131,9 @@ var translations = {
     "services.title": "Our Services",
     "services.haircut.title": "Haircut",
     "services.haircut.desc": "Professional cuts personalized to your face shape and personal style.",
-    "services.styling.title": "Styling",
-    "services.styling.desc": "Professional styling for any occasion - from everyday to special events.",
+    "services.hairBeardWash.title": "Hair + Beard + Hair Wash",
+"services.hairBeardWash.desc": "Haircut, beard trim, and hair wash in one complete service.",
+
     "services.coloring.title": "Coloring",
     "services.coloring.desc": "Professional coloring with premium products for brilliant and lasting results.",
     "services.beard.title": "Beard & Mustache",
@@ -224,8 +226,9 @@ var translations = {
     "services.title": "Нашите Услуги",
     "services.haircut.title": "Шишање",
     "services.haircut.desc": "Професионални фризури прилагодени на формата на вашето лице и личен стил.",
-    "services.styling.title": "Стилизирање",
-    "services.styling.desc": "Професионално стилизирање за секоја пригода - од секојдневни до специјални настани.",
+    "services.hairBeardWash.title": "Коса + Брада + Миење Коса",
+"services.hairBeardWash.desc": "Шишање, средување брада и миење коса во еден комплетен сервис.",
+
     "services.coloring.title": "Боење",
     "services.coloring.desc": "Професионално боење со премиум производи за брилијантни и трајни резултати.",
     "services.beard.title": "Брада и Мустаќи",
@@ -323,8 +326,9 @@ var translations = {
     "services.title": "Unsere Leistungen",
     "services.haircut.title": "Haarschnitt",
     "services.haircut.desc": "Professionelle Schnitte, angepasst an Ihre Gesichtsform und persönlichen Stil.",
-    "services.styling.title": "Styling",
-    "services.styling.desc": "Professionelles Styling für jeden Anlass - vom Alltag bis zu besonderen Events.",
+"services.hairBeardWash.title": "Haare + Bart + Haarwäsche",
+"services.hairBeardWash.desc": "Haarschnitt, Bartpflege und Haarwäsche in einem Komplettservice.",
+
     "services.coloring.title": "Färbung",
     "services.coloring.desc": "Professionelle Färbung mit Premium-Produkten für brillante und dauerhafte Ergebnisse.",
     "services.beard.title": "Bart & Schnurrbart",
@@ -398,13 +402,7 @@ var servicesData = [
     descKey: "services.haircut.desc",
     price: 300,
   },
-  {
-    id: "styling",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>',
-    titleKey: "services.styling.title",
-    descKey: "services.styling.desc",
-    price: 0,
-  },
+
   {
     id: "coloring",
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 22 1-1h3l9-9"/><path d="M3 21v-3l9-9"/><path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.4.4a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.4.4Z"/></svg>',
@@ -412,27 +410,35 @@ var servicesData = [
     descKey: "services.coloring.desc",
     price: 1000,
   },
-  {
-    id: "beard",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7"/><path d="M6 10c0 4.667 4 8 6 10 2-2 6-5.333 6-10"/><path d="M18 3v7"/><path d="M6 7c2-1 4-1 6-1s4 0 6 1"/></svg>',
-    titleKey: "services.beard.title",
-    descKey: "services.beard.desc",
-    price: 100,
-  },
+{
+  id: "beard",
+  icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-moustache"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 9a3 3 0 0 1 2.599 1.5c.933 1.333 2.133 1.556 3.126 1.556l.291 0l.77 -.044l.213 0c-.963 1.926 -3.163 2.925 -6.6 3l-.4 0l-.165 0a3 3 0 0 1 .165 -6l.001 -.012"/><path d="M9 9a3 3 0 0 0 -2.599 1.5c-.933 1.333 -2.133 1.556 -3.126 1.556l-.291 0l-.77 -.044l-.213 0c.963 1.926 3.163 2.925 6.6 3l.4 0l.165 0a3 3 0 0 0 -.165 -6l-.001 -.012"/></svg>',
+  titleKey: "services.beard.title",
+  descKey: "services.beard.desc",
+  price: 100,
+},
   {
     id: "treatment",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12-4.6-2.5"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-activity-heartbeat"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12h4.5l1.5 -6l4 12l2 -9l1.5 3h4.5" /></svg>',
     titleKey: "services.treatment.title",
     descKey: "services.treatment.desc",
     price: 500,
   },
   {
     id: "kids",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="m14 8-1.5 6.5L16 20"/><path d="m8 8 1.5 6.5L6 20"/><path d="m10 14.5 2 1 2-1"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mood-kid"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 10l.01 0" /><path d="M15 10l.01 0" /><path d="M9.5 15a3.5 3.5 0 0 0 5 0" /><path d="M12 3a2 2 0 0 0 0 4" /></svg>',
     titleKey: "services.kids.title",
     descKey: "services.kids.desc",
     price: 300,
   },
+{
+  id: "styling",
+  icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-razor-electric"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 3v2" /><path d="M12 3v2" /><path d="M16 3v2" /><path d="M9 12v6a3 3 0 0 0 6 0v-6h-6" /><path d="M8 5h8l-1 4h-6l-1 -4" /><path d="M12 17v1" /></svg>',
+
+  titleKey: "services.hairBeardWash.title",
+  descKey: "services.hairBeardWash.desc",
+  price: 500,
+},
 ]
 
 // You can use any image URL including Imgur links
