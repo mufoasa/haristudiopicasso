@@ -880,6 +880,7 @@ ul {
   filter: grayscale(100%) invert(90%) contrast(90%);
 }
 
+
 /* Footer */
 .footer {
   background: var(--color-dark);
@@ -942,6 +943,15 @@ ul {
 
 .footer-hours ul li span {
   color: var(--color-white);
+}
+
+.booking-form .booking-confirmation-note {
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #c9a227;
+  text-align: center;
+  display: block;
 }
 
 /* Social Icons */
