@@ -466,7 +466,7 @@ var teamData = [
    {
     name: "Rilind Veliu",
     roleKey: "team.role.helper",
-    image: "https://i.imgur.com/DxnNord.jpeg",
+    image: "https://i.imgur.com/AljMgIW.jpeg",
   },
 ]
 
