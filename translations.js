@@ -51,7 +51,7 @@ var translations = {
     // Team
     "team.subtitle": "Njihuni me Ne",
     "team.title": "Ekipi Ynë",
-    "team.role.master": "Mjeshtër & Themeluesi (Picasso)",
+    "team.role.master": "Mjeshtër & Drejtor",
     "team.role.senior": "Menaxher I Përgjithshëm",
     "team.role.colorist": "Stilues",
     "team.role.helper": "Ndihmës",
@@ -78,6 +78,8 @@ var translations = {
     "booking.time": "Ora",
     "booking.selectTime": "Zgjidhni orën",
     "booking.selectStaff": "Zgjidhni stilistin",
+    "booking.confirmationNote": "⏱️ Koha e rezervimit mund të jetë e zënë. Do t’ju kontaktojmë përmes WhatsApp për konfirmim.",
+    
 
     // Contact
     "contact.subtitle": "Na Kontaktoni",
@@ -157,22 +159,29 @@ var translations = {
     "team.role.helper": "Assistant",
 
     // Booking
-    "booking.subtitle": "Book Your Visit",
-    "booking.title": "Make an Appointment",
-    "booking.infoTitle": "Why choose us?",
-    "booking.benefit1": "✓ Experienced professional stylists",
-    "booking.benefit2": "✓ Premium hair products",
-    "booking.benefit3": "✓ Comfortable and elegant atmosphere",
-    "booking.benefit4": "✓ Competitive prices",
-    "booking.name": "Full Name",
-    "booking.phone": "Phone Number",
-    "booking.service": "Service",
-    "booking.selectService": "Select a service",
-    "booking.message": "Message (Optional)",
-    "booking.submit": "Submit Request",
-    "booking.errorName": "Please enter your name",
-    "booking.errorPhone": "Please enter your phone number",
-    "booking.errorService": "Please select a service",
+  
+"booking.subtitle": "Book Your Visit",
+"booking.title": "Schedule an Appointment",
+"booking.infoTitle": "Why Choose Us?",
+"booking.benefit1": "✓ Experienced professional stylists",
+"booking.benefit2": "✓ Premium hair products",
+"booking.benefit3": "✓ Comfortable and elegant atmosphere",
+"booking.benefit4": "✓ Competitive prices",
+"booking.name": "Full Name",
+"booking.phone": "Phone Number",
+"booking.service": "Service",
+"booking.selectService": "Select a Service",
+"booking.message": "Message (Optional)",
+"booking.submit": "Send Request",
+"booking.errorName": "Please enter your name",
+"booking.errorPhone": "Please enter your phone number",
+"booking.errorService": "Please select a service",
+"booking.date": "Date",
+"booking.datePlaceholder": "Select a date",
+"booking.time": "Time",
+"booking.selectTime": "Select a time",
+"booking.selectStaff": "Select a stylist",
+"booking.confirmationNote": "⏱️ The selected reservation time may already be taken. We will contact you via WhatsApp to confirm.",
 
     // Contact
     "contact.subtitle": "Get in Touch",
@@ -273,6 +282,7 @@ var translations = {
     "booking.time": "Време",
     "booking.selectTime": "Изберете време",
     "booking.selectStaff": "Изберете стилист",
+    "booking.confirmationNote": "⏱️ Избраното време за резервација може да биде зафатено. Ќе ве контактираме преку WhatsApp за потврда.",
 
     // Contact
     "contact.subtitle": "Контактирајте Не",
@@ -370,6 +380,7 @@ var translations = {
     "booking.time": "Uhrzeit",
     "booking.selectTime": "Wählen Sie die Uhrzeit",
     "booking.selectStaff": "Wählen Sie den Stylisten",
+    "booking.confirmationNote": "⏱️ Die gewählte Reservierungszeit kann bereits belegt sein. Wir werden Sie zur Bestätigung über WhatsApp kontaktieren.",
 
     // Contact
     "contact.subtitle": "Kontaktieren Sie Uns",
@@ -396,49 +407,50 @@ var translations = {
 
 var servicesData = [
   {
-    id: "haircut",
+    id: "Prerje Flokesh",
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>',
     titleKey: "services.haircut.title",
     descKey: "services.haircut.desc",
     price: 300,
   },
-
-  {
-    id: "coloring",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 22 1-1h3l9-9"/><path d="M3 21v-3l9-9"/><path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.4.4a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.4.4Z"/></svg>',
-    titleKey: "services.coloring.title",
-    descKey: "services.coloring.desc",
-    price: 1000,
-  },
 {
-  id: "beard",
+  id: "Mjeker",
   icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-moustache"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 9a3 3 0 0 1 2.599 1.5c.933 1.333 2.133 1.556 3.126 1.556l.291 0l.77 -.044l.213 0c-.963 1.926 -3.163 2.925 -6.6 3l-.4 0l-.165 0a3 3 0 0 1 .165 -6l.001 -.012"/><path d="M9 9a3 3 0 0 0 -2.599 1.5c-.933 1.333 -2.133 1.556 -3.126 1.556l-.291 0l-.77 -.044l-.213 0c.963 1.926 3.163 2.925 6.6 3l.4 0l.165 0a3 3 0 0 0 -.165 -6l-.001 -.012"/></svg>',
   titleKey: "services.beard.title",
   descKey: "services.beard.desc",
   price: 100,
 },
-  {
-    id: "treatment",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-activity-heartbeat"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12h4.5l1.5 -6l4 12l2 -9l1.5 3h4.5" /></svg>',
-    titleKey: "services.treatment.title",
-    descKey: "services.treatment.desc",
-    price: 500,
-  },
-  {
-    id: "kids",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mood-kid"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 10l.01 0" /><path d="M15 10l.01 0" /><path d="M9.5 15a3.5 3.5 0 0 0 5 0" /><path d="M12 3a2 2 0 0 0 0 4" /></svg>',
-    titleKey: "services.kids.title",
-    descKey: "services.kids.desc",
-    price: 300,
-  },
 {
-  id: "styling",
+  id: "Floke, Mjeker & Larje",
   icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-razor-electric"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 3v2" /><path d="M12 3v2" /><path d="M16 3v2" /><path d="M9 12v6a3 3 0 0 0 6 0v-6h-6" /><path d="M8 5h8l-1 4h-6l-1 -4" /><path d="M12 17v1" /></svg>',
 
   titleKey: "services.hairBeardWash.title",
   descKey: "services.hairBeardWash.desc",
   price: 500,
 },
+  {
+    id: "Ngjyrosje",
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 22 1-1h3l9-9"/><path d="M3 21v-3l9-9"/><path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.4.4a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.4.4Z"/></svg>',
+    titleKey: "services.coloring.title",
+    descKey: "services.coloring.desc",
+    price: 1000,
+  },
+
+  {
+    id: "Trajtim",
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-activity-heartbeat"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12h4.5l1.5 -6l4 12l2 -9l1.5 3h4.5" /></svg>',
+    titleKey: "services.treatment.title",
+    descKey: "services.treatment.desc",
+    price: 500,
+  },
+  {
+    id: "Femije",
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mood-kid"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 10l.01 0" /><path d="M15 10l.01 0" /><path d="M9.5 15a3.5 3.5 0 0 0 5 0" /><path d="M12 3a2 2 0 0 0 0 4" /></svg>',
+    titleKey: "services.kids.title",
+    descKey: "services.kids.desc",
+    price: 300,
+  },
+
 ]
 
 // You can use any image URL including Imgur links
