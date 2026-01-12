@@ -51,7 +51,7 @@ var translations = {
     // Team
     "team.subtitle": "Njihuni me Ne",
     "team.title": "Ekipi Ynë",
-    "team.role.master": "Mjeshtër & Drejtor",
+    "team.role.master": "Mjeshtër & Themeluesi (Picasso)",
     "team.role.senior": "Menaxher I Përgjithshëm",
     "team.role.colorist": "Stilues",
     "team.role.helper": "Ndihmës",
