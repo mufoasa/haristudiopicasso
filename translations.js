@@ -16,9 +16,9 @@ var translations = {
 
     // About
     "about.subtitle": "Historia Jonë",
-    "about.title": "Rreth HairStudio Picasso",
+    "about.title": "Rreth Hair Studio Picasso",
     "about.description1":
-      "Që nga viti 2015, HairStudio Picasso ka qenë destinacioni kryesor për kujdesin premium të flokëve në Tetovë. Emri ynë pasqyron filozofinë tonë - çdo prerje flokësh është një vepër arti.",
+      "Që nga viti 2015, Hair Studio Picasso ka qenë destinacioni kryesor për kujdesin premium të flokëve në Tetovë. Emri ynë pasqyron filozofinë tonë - çdo prerje flokësh është një vepër arti.",
     "about.description2":
       "Ekipi ynë i stilistëve të talentuar kombinon teknikat tradicionale me trendet moderne për të krijuar pamje të personalizuara që theksojnë bukurinë tuaj natyrore.",
     "about.yearsExp": "Vite Përvojë",
@@ -43,6 +43,8 @@ var translations = {
     "services.kids.title": "Fëmijë",
     "services.kids.desc": "Prerje të kujdesshme dhe argëtuese për fëmijët në ambient miqësor.",
     "services.from": "Nga",
+    "services.hairBeard.title": "Flokë + Mjekër",
+  "services.hairBeard.desc": "Paketë për prerje flokësh dhe trajtim mjekre",
 
     // Gallery
     "gallery.subtitle": "Puna Jonë",
@@ -79,6 +81,11 @@ var translations = {
     "booking.selectTime": "Zgjidhni orën",
     "booking.selectStaff": "Zgjidhni stilistin",
     "booking.confirmationNote": "⏱️ Koha e rezervimit mund të jetë e zënë. Do t’ju kontaktojmë përmes WhatsApp për konfirmim.",
+     "booking.infoSectionTitle": "Informacion",
+    "booking.reservationNote": "📌 Ne rekomandojmë që rezervimi të bëhet <strong>12-24 orë</strong> më herët për të siguruar disponueshmërinë.",
+    "booking.whatsappNote": "📲 Rezervimi juaj do të konfirmohet nëpërmjet WhatsApp nga pjestari i stafit që keni zgjedhur.",
+    "booking.invalidNote": "⚠️ Rezervimi është <strong>jo valid</strong> deri në konfirmimin nga ekipi!",
+    "booking.reminderNote": "ℹ️ Ju lutemi të jeni të saktë me orarin dhe shërbimin e zgjedhur për të siguruar një eksperiencë të rehatshme.",
     
 
     // Contact
@@ -119,9 +126,9 @@ var translations = {
 
     // About
     "about.subtitle": "Our Story",
-    "about.title": "About HairStudio Picasso",
+    "about.title": "About Hair Studio Picasso",
     "about.description1":
-      "Since 2015, HairStudio Picasso has been the premier destination for premium hair care in Tetovo. Our name reflects our philosophy - every haircut is a work of art.",
+      "Since 2015, Hair Studio Picasso has been the premier destination for premium hair care in Tetovo. Our name reflects our philosophy - every haircut is a work of art.",
     "about.description2":
       "Our team of talented stylists combines traditional techniques with modern trends to create personalized looks that enhance your natural beauty.",
     "about.yearsExp": "Years Experience",
@@ -145,7 +152,8 @@ var translations = {
     "services.kids.title": "Kids",
     "services.kids.desc": "Careful and fun haircuts for children in a friendly environment.",
     "services.from": "From",
-
+"services.hairBeard.title": "Hair + Beard",
+  "services.hairBeard.desc": "Haircut and beard treatment package",
     // Gallery
     "gallery.subtitle": "Our Work",
     "gallery.title": "Gallery",
@@ -182,6 +190,11 @@ var translations = {
 "booking.selectTime": "Select a time",
 "booking.selectStaff": "Select a stylist",
 "booking.confirmationNote": "⏱️ The selected reservation time may already be taken. We will contact you via WhatsApp to confirm.",
+ "booking.infoSectionTitle": "Information",
+    "booking.reservationNote": "📌 We recommend making your reservation <strong>12-24 hours</strong> in advance to ensure availability.",
+    "booking.whatsappNote": "📲 Your reservation will be confirmed via WhatsApp by the staff member you selected.",
+    "booking.invalidNote": "⚠️ The reservation is <strong>not valid</strong> until confirmed by the team!",
+    "booking.reminderNote": "ℹ️ Please be punctual with your chosen time and service to ensure a smooth experience.",
 
     // Contact
     "contact.subtitle": "Get in Touch",
@@ -221,9 +234,9 @@ var translations = {
 
     // About
     "about.subtitle": "Нашата Приказна",
-    "about.title": "За HairStudio Picasso",
+    "about.title": "За Hair Studio Picasso",
     "about.description1":
-      "Од 2015 година, HairStudio Picasso е премиум дестинација за нега на коса во Тетово. Нашето име ја одразува нашата филозофија - секое шишање е уметничко дело.",
+      "Од 2015 година, Hair Studio Picasso е премиум дестинација за нега на коса во Тетово. Нашето име ја одразува нашата филозофија - секое шишање е уметничко дело.",
     "about.description2":
       "Нашиот тим на талентирани стилисти комбинира традиционални техники со модерни трендови за да создаде персонализирани изгледи кои ја истакнуваат вашата природна убавина.",
     "about.yearsExp": "Години Искуство",
@@ -247,6 +260,8 @@ var translations = {
     "services.kids.title": "Деца",
     "services.kids.desc": "Внимателни и забавни шишања за деца во пријателска атмосфера.",
     "services.from": "Од",
+    "services.hairBeard.title": "Коса + Брада",
+  "services.hairBeard.desc": "Пакет за шишање на коса и нега на брада",
 
     // Gallery
     "gallery.subtitle": "Нашата Работа",
@@ -283,6 +298,11 @@ var translations = {
     "booking.selectTime": "Изберете време",
     "booking.selectStaff": "Изберете стилист",
     "booking.confirmationNote": "⏱️ Избраното време за резервација може да биде зафатено. Ќе ве контактираме преку WhatsApp за потврда.",
+    "booking.infoSectionTitle": "Информации",
+    "booking.reservationNote": "📌 Препорачуваме резервацијата да се направи <strong>12-24 часа</strong> однапред за да се обезбеди достапност.",
+    "booking.whatsappNote": "📲 Вашата резервација ќе биде потврдена преку WhatsApp од членот на персоналот што го избравте.",
+    "booking.invalidNote": "⚠️ Резервацијата е <strong>невалидна</strong> додека не биде потврдена од тимот!",
+    "booking.reminderNote": "ℹ️ Ве молиме бидете точни со времето и услугата што ја избравте за да обезбедите удобно искуство.",
 
     // Contact
     "contact.subtitle": "Контактирајте Не",
@@ -322,9 +342,9 @@ var translations = {
 
     // About
     "about.subtitle": "Unsere Geschichte",
-    "about.title": "Über HairStudio Picasso",
+    "about.title": "Über Hair Studio Picasso",
     "about.description1":
-      "Seit 2015 ist HairStudio Picasso die erste Adresse für Premium-Haarpflege in Tetovo. Unser Name spiegelt unsere Philosophie wider - jeder Haarschnitt ist ein Kunstwerk.",
+      "Seit 2015 ist Hair Studio Picasso die erste Adresse für Premium-Haarpflege in Tetovo. Unser Name spiegelt unsere Philosophie wider - jeder Haarschnitt ist ein Kunstwerk.",
     "about.description2":
       "Unser Team talentierter Stylisten kombiniert traditionelle Techniken mit modernen Trends, um personalisierte Looks zu kreieren, die Ihre natürliche Schönheit betonen.",
     "about.yearsExp": "Jahre Erfahrung",
@@ -348,6 +368,8 @@ var translations = {
     "services.kids.title": "Kinder",
     "services.kids.desc": "Sorgfältige und lustige Haarschnitte für Kinder in freundlicher Umgebung.",
     "services.from": "Ab",
+    "services.hairBeard.title": "Haare + Bart",
+  "services.hairBeard.desc": "Haarschnitt- und Bartpflegepaket",
 
     // Gallery
     "gallery.subtitle": "Unsere Arbeit",
@@ -381,6 +403,11 @@ var translations = {
     "booking.selectTime": "Wählen Sie die Uhrzeit",
     "booking.selectStaff": "Wählen Sie den Stylisten",
     "booking.confirmationNote": "⏱️ Die gewählte Reservierungszeit kann bereits belegt sein. Wir werden Sie zur Bestätigung über WhatsApp kontaktieren.",
+      "booking.infoSectionTitle": "Information",
+    "booking.reservationNote": "📌 Wir empfehlen, die Reservierung <strong>12-24 Stunden</strong> im Voraus vorzunehmen, um die Verfügbarkeit sicherzustellen.",
+    "booking.whatsappNote": "📲 Ihre Reservierung wird über WhatsApp von dem von Ihnen gewählten Mitarbeiter bestätigt.",
+    "booking.invalidNote": "⚠️ Die Reservierung ist <strong>nicht gültig</strong>, bis sie vom Team bestätigt wird!",
+    "booking.reminderNote": "ℹ️ Bitte seien Sie pünktlich mit Ihrer gewählten Uhrzeit und Dienstleistung, um ein reibungsloses Erlebnis zu gewährleisten.",
 
     // Contact
     "contact.subtitle": "Kontaktieren Sie Uns",
@@ -419,6 +446,13 @@ var servicesData = [
   titleKey: "services.beard.title",
   descKey: "services.beard.desc",
   price: 100,
+},
+{
+  id: "Floke + Mjeker",
+  icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-razor-electric"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 3v2" /><path d="M12 3v2" /><path d="M16 3v2" /><path d="M9 12v6a3 3 0 0 0 6 0v-6h-6" /><path d="M8 5h8l-1 4h-6l-1 -4" /><path d="M12 17v1" /></svg>',
+  titleKey: "services.hairBeard.title",
+  descKey: "services.hairBeard.desc",
+  price: 400
 },
 {
   id: "Floke, Mjeker & Larje",
@@ -483,12 +517,12 @@ var teamData = [
 ]
 
 var galleryImages = [
-  { type: "image", url: "https://i.imgur.com/gqVzYT5.jpeg" },          // 1
-  { type: "image", url: "https://i.imgur.com/pMBFaUT.jpeg" },          // 2
-  { type: "image", url: "https://i.imgur.com/KLeb9cX.jpeg" },          // 3
-  { type: "video", url: "https://mufoasa.github.io/haristudiopicasso/picasovid.mp4" }, // 4 (video)
-  { type: "image", url: "https://i.imgur.com/VQ8UGqL.jpeg" },          // 5
-  { type: "image", url: "https://i.imgur.com/i6CXItU.jpeg" },          // 6
-  { type: "video", url: "https://mufoasa.github.io/haristudiopicasso/picaso2.mp4" },   // 7 (video)
-  { type: "image", url: "https://i.imgur.com/0JJ6lrR.jpeg" }           // 8
+  { type: "image", url: "https://i.imgur.com/gqVzYT5.jpeg" },         
+  { type: "image", url: "https://i.imgur.com/pMBFaUT.jpeg" },       
+  { type: "video", url: "https://mufoasa.github.io/haristudiopicasso/picaso2.mp4" },   
+  { type: "video", url: "https://mufoasa.github.io/haristudiopicasso/picasovid.mp4" }, 
+  { type: "image", url: "https://i.imgur.com/KLeb9cX.jpeg" },        
+  { type: "image", url: "https://i.imgur.com/VQ8UGqL.jpeg" },         
+  { type: "image", url: "https://i.imgur.com/i6CXItU.jpeg" },        
+  { type: "image", url: "https://i.imgur.com/0JJ6lrR.jpeg" }         
 ];
