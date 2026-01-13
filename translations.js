@@ -103,6 +103,7 @@ var translations = {
     "footer.closed": "Mbyllur",
     "footer.followUs": "Na Ndiqni",
     "footer.rights": "Të gjitha të drejtat e rezervuara.",
+    "footer.poweredBy": "Mundësuar nga",
 
     // Modal
     "modal.title": "Faleminderit!",
@@ -211,6 +212,7 @@ var translations = {
     "footer.closed": "Closed",
     "footer.followUs": "Follow Us",
     "footer.rights": "All rights reserved.",
+    "footer.poweredBy": "Powered by",
 
     // Modal
     "modal.title": "Thank You!",
@@ -319,6 +321,7 @@ var translations = {
     "footer.closed": "Затворено",
     "footer.followUs": "Следете Не",
     "footer.rights": "Сите права се задржани.",
+    "footer.poweredBy": "Овозможено од",
 
     // Modal
     "modal.title": "Ви Благодариме!",
@@ -424,6 +427,7 @@ var translations = {
     "footer.closed": "Geschlossen",
     "footer.followUs": "Folgen Sie Uns",
     "footer.rights": "Alle Rechte vorbehalten.",
+    "footer.poweredBy": "Bereitgestellt von",
 
     // Modal
     "modal.title": "Vielen Dank!",
