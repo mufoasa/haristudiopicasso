@@ -818,6 +818,29 @@ ul {
   background: var(--color-dark);
   color: var(--color-white);
 }
+/* --- Booking Info Section Styling (match "Pse të na zgjidhni") --- */
+.booking-info-section {
+  margin-top: 40px; /* spacing from benefits list */
+}
+
+.booking-info-section h3 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: var(--color-white);
+}
+
+.booking-info-section p {
+  font-size: 16px;
+  color: var(--color-off-white);
+  padding-left: 10px; /* same as benefits list */
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.booking-info-section p strong {
+  color: var(--color-gold); /* highlight bold text like 12-24 orë */
+}
 
 
 /* Contact Section */
