@@ -107,27 +107,25 @@ function initLanguageSwitcher() {
 function updateLanguage() {
   console.log("[v0] Updating language to:", currentLang)
 
-  if (typeof translations === "undefined") {
-    console.log("[v0] ERROR: translations not defined")
-    return
-  }
-
+  if (typeof translations === "undefined") return
   var t = translations[currentLang]
-  if (!t) {
-    console.log("[v0] ERROR: No translations for language:", currentLang)
-    return
-  }
+  if (!t) return
 
-  console.log("[v0] Found translations for", currentLang, "with keys:", Object.keys(t).length)
-
-  // Update all elements with data-translate attribute
   var elements = document.querySelectorAll("[data-translate]")
-  console.log("[v0] Found", elements.length, "elements to translate")
 
   for (var i = 0; i < elements.length; i++) {
-    var key = elements[i].getAttribute("data-translate")
-    if (t[key]) {
-      elements[i].textContent = t[key]
+    var el = elements[i]
+    var key = el.getAttribute("data-translate")
+    if (!t[key]) continue
+
+    // Use value for inputs, textareas, selects
+    if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+      el.value = t[key]
+    } else if (el.tagName === "OPTION") {
+      el.textContent = t[key]
+    } else {
+      // For normal elements: p, div, span, h3, etc.
+      el.innerHTML = t[key]
     }
   }
 
