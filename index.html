@@ -515,27 +515,64 @@ window.addEventListener('load', function() {
   <!-- Load translations.js BEFORE main.js to ensure translations are available -->
   <script src="translations.js"></script>
   <script src="main.js"></script>
-<script>
-document.getElementById("whatsappBooking").addEventListener("click", function () {
+<script type="module">
+  // 1️⃣ Firebase imports
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+  import { getFirestore, doc, runTransaction } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
 
-  const form = document.getElementById("bookingForm");
+  // 2️⃣ Firebase config (your project)
+  const firebaseConfig = {
+    apiKey: "AIzaSyDpmPyRDHhHIsh-uWgC5RweqwplOXJBql0",
+    authDomain: "picasso-56a7f.firebaseapp.com",
+    projectId: "picasso-56a7f",
+    storageBucket: "picasso-56a7f.firebasestorage.app",
+    messagingSenderId: "895913212897",
+    appId: "1:895913212897:web:09779428d3811b1874f0a0",
+    measurementId: "G-HGBZLLZEN5"
+  };
 
-  const name = form.querySelector('[name="name"]').value.trim();
-  const phone = form.querySelector('[name="phone"]').value.trim();
-  const service = form.querySelector('[name="service"]').value;
-  const date = form.querySelector('[name="date"]').value;
-  const time = form.querySelector('[name="time"]').value;
-  const staffSelect = document.getElementById("staff");
-  const staffNumber = staffSelect.value;
-  const staffName = staffSelect.options[staffSelect.selectedIndex].text;
-  const message = form.querySelector('[name="message"]').value.trim();
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
-  if (!name || !phone || !service || !date || !time || !staffNumber) {
-    alert("Ju lutemi plotësoni të gjitha fushat.");
-    return;
+  // 3️⃣ Lock slot function to prevent double booking
+  async function lockSlot(date, time, staffNumber) {
+    const slotId = `${date}_${time}_${staffNumber}`;
+    const slotRef = doc(db, "slots", slotId);
+
+    await runTransaction(db, async (tx) => {
+      const snap = await tx.get(slotRef);
+      if (snap.exists()) throw new Error("Slot already booked");
+
+      tx.set(slotRef, { date, time, staffNumber, createdAt: new Date() });
+    });
   }
 
-  const text = `
+  // 4️⃣ Existing WhatsApp booking logic with locking
+  document.getElementById("whatsappBooking").addEventListener("click", async function () {
+
+    const form = document.getElementById("bookingForm");
+
+    const name = form.querySelector('[name="name"]').value.trim();
+    const phone = form.querySelector('[name="phone"]').value.trim();
+    const service = form.querySelector('[name="service"]').value;
+    const date = form.querySelector('[name="date"]').value;
+    const time = form.querySelector('[name="time"]').value;
+    const staffSelect = document.getElementById("staff");
+    const staffNumber = staffSelect.value;
+    const staffName = staffSelect.options[staffSelect.selectedIndex].text;
+    const message = form.querySelector('[name="message"]').value.trim();
+
+    if (!name || !phone || !service || !date || !time || !staffNumber) {
+      alert("Ju lutemi plotësoni të gjitha fushat.");
+      return;
+    }
+
+    try {
+      // ✅ Lock the slot in Firestore before WhatsApp
+      await lockSlot(date, time, staffNumber);
+
+      // Build WhatsApp message
+      const text = `
 📅 Rezervim i Ri
 👤 Klienti: ${name}
 📞 Telefoni: ${phone}
@@ -544,60 +581,19 @@ document.getElementById("whatsappBooking").addEventListener("click", function ()
 ⏰ Ora: ${time}
 👨‍💼 Stilisti: ${staffName}
 📝 Mesazh: ${message || "—"}
-  `;
+      `;
 
-  window.open(
-    "https://wa.me/" + staffNumber + "?text=" + encodeURIComponent(text),
-    "_blank"
-  );
-});
-</script>
+      window.open(
+        "https://wa.me/" + staffNumber + "?text=" + encodeURIComponent(text),
+        "_blank"
+      );
 
-<script>
-const dateInput = document.getElementById("bookingDate");
-const timeSelect = document.getElementById("timeSlots");
-
-const OPEN_HOUR = 9;     // 09:00
-const CLOSE_HOUR = 21;   // 21:00
-const SLOT_INTERVAL = 30; // minutes
-
-function generateTimeSlots(selectedDate) {
-  timeSelect.innerHTML = '<option value="">Zgjidhni orën</option>';
-  if (!selectedDate) return;
-
-  const now = new Date();
-  const selected = new Date(selectedDate);
-  const isToday = selected.toDateString() === now.toDateString();
-
-  for (let hour = OPEN_HOUR; hour < CLOSE_HOUR; hour++) {
-    for (let min = 0; min < 60; min += SLOT_INTERVAL) {
-
-      const slot = new Date(selected);
-      slot.setHours(hour, min, 0, 0);
-
-      // Block past times for today
-      if (isToday && slot <= now) continue;
-
-      const h = String(hour).padStart(2, "0");
-      const m = String(min).padStart(2, "0");
-
-      const option = document.createElement("option");
-      option.value = `${h}:${m}`;
-      option.textContent = `${h}:${m}`;
-
-      timeSelect.appendChild(option);
+    } catch {
+      alert("Ky orar është tashmë i rezervuar. Ju lutemi zgjidhni një tjetër.");
     }
-  }
-}
-
-// Generate slots when date changes
-dateInput.addEventListener("change", function () {
-  generateTimeSlots(this.value);
-});
-
-// Block past dates
-dateInput.min = new Date().toISOString().split("T")[0];
+  });
 </script>
+
 
 </body>
 </html>
