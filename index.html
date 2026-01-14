@@ -327,7 +327,7 @@ window.addEventListener('load', function() {
     📌 Ne rekomandojmë që rezervimi të bëhet <strong>12-24 orë</strong> më herët për të siguruar disponueshmërinë.
   </p>
   <p data-translate="booking.whatsappNote">
-    📲 Rezervimi juaj do të konfirmohet nëpërjet WhatsApp nga pjestari i stafit që keni zgjedhur.
+    📲 Rezervimi juaj do të konfirmohet nëpërmjet WhatsApp nga pjestari i stafit që keni zgjedhur.
   </p>
   <p data-translate="booking.invalidNote">
     ⚠️ Rezervimi është <strong>jo valid</strong> deri në konfirmimin nga ekipi!
@@ -408,7 +408,7 @@ window.addEventListener('load', function() {
         <div class="contact-info">
           <div class="contact-item">
             <div class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div class="contact-details">
               <h4 data-translate="contact.address">Adresa</h4>
@@ -515,109 +515,27 @@ window.addEventListener('load', function() {
   <!-- Load translations.js BEFORE main.js to ensure translations are available -->
   <script src="translations.js"></script>
   <script src="main.js"></script>
+<script>
+document.getElementById("whatsappBooking").addEventListener("click", function () {
 
-<script type="module">
-  // Firebase imports
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-  import { getFirestore, doc, runTransaction, collection, setDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+  const form = document.getElementById("bookingForm");
 
-  // Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyDpmPyRDHhHIsh-uWgC5RweqwplOXJBql0",
-    authDomain: "picasso-56a7f.firebaseapp.com",
-    projectId: "picasso-56a7f",
-    storageBucket: "picasso-56a7f.firebasestorage.app",
-    messagingSenderId: "895913212897",
-    appId: "1:895913212897:web:09779428d3811b1874f0a0",
-    measurementId: "G-HGBZLLZEN5"
-  };
+  const name = form.querySelector('[name="name"]').value.trim();
+  const phone = form.querySelector('[name="phone"]').value.trim();
+  const service = form.querySelector('[name="service"]').value;
+  const date = form.querySelector('[name="date"]').value;
+  const time = form.querySelector('[name="time"]').value;
+  const staffSelect = document.getElementById("staff");
+  const staffNumber = staffSelect.value;
+  const staffName = staffSelect.options[staffSelect.selectedIndex].text;
+  const message = form.querySelector('[name="message"]').value.trim();
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  console.log("[v0] Firebase initialized successfully");
-
-  // Function to lock a slot and save reservation in Firestore using transaction
-  async function lockSlotAndSaveReservation(reservationData) {
-    const { date, time, staffNumber, name, phone, service, message, staffName } = reservationData;
-    const slotId = `${date}_${time}_${staffNumber}`;
-    const slotRef = doc(db, "slots", slotId);
-
-    console.log("[v0] Attempting to lock slot and save reservation:", slotId);
-
-    return runTransaction(db, async (tx) => {
-      const snap = await tx.get(slotRef);
-      console.log("[v0] Slot exists?", snap.exists(), "- Data:", snap.data());
-      
-      if (snap.exists()) {
-        console.log("[v0] Slot is already booked!");
-        throw new Error("Slot already booked");
-      }
-
-      // Lock the slot
-      tx.set(slotRef, { 
-        date, 
-        time, 
-        staffNumber, 
-        createdAt: new Date().toISOString(),
-        timestamp: Date.now()
-      });
-
-      // Save full reservation details to reservations collection
-      const reservationId = `${Date.now()}_${slotId}`;
-      const reservationRef = doc(db, "reservations", reservationId);
-      
-      tx.set(reservationRef, {
-        id: reservationId,
-        slotId: slotId,
-        clientName: name,
-        clientPhone: phone,
-        service: service,
-        date: date,
-        time: time,
-        staffNumber: staffNumber,
-        staffName: staffName,
-        message: message || "",
-        status: "pending",
-        createdAt: new Date().toISOString(),
-        timestamp: Date.now()
-      });
-
-      console.log("[v0] Slot locked and reservation saved successfully!");
-    });
+  if (!name || !phone || !service || !date || !time || !staffNumber) {
+    alert("Ju lutemi plotësoni të gjitha fushat.");
+    return;
   }
 
-  // WhatsApp booking with Firebase double-booking prevention
-  document.getElementById("whatsappBooking").addEventListener("click", async function () {
-    const form = document.getElementById("bookingForm");
-
-    const name = form.querySelector('[name="name"]').value.trim();
-    const phone = form.querySelector('[name="phone"]').value.trim();
-    const serviceSelect = form.querySelector('[name="service"]');
-    const service = serviceSelect.options[serviceSelect.selectedIndex].text;
-    const date = form.querySelector('[name="date"]').value;
-    const time = form.querySelector('[name="time"]').value;
-    const staffSelect = document.getElementById("staff");
-    const staffNumber = staffSelect.value;
-    const staffName = staffSelect.options[staffSelect.selectedIndex].text;
-    const message = form.querySelector('[name="message"]').value.trim();
-
-    if (!name || !phone || !serviceSelect.value || !date || !time || !staffNumber) {
-      alert("Ju lutemi plotësoni të gjitha fushat.");
-      return;
-    }
-
-    console.log("[v0] Form validated, checking slot availability...");
-
-    try {
-      // Check and lock slot, then save reservation in Firestore
-      await lockSlotAndSaveReservation({
-        date, time, staffNumber, name, phone, service, message, staffName
-      });
-      console.log("[v0] Slot is free, proceeding to WhatsApp...");
-
-      // Build WhatsApp message
-      const text = `
+  const text = `
 📅 Rezervim i Ri
 👤 Klienti: ${name}
 📞 Telefoni: ${phone}
@@ -626,26 +544,15 @@ window.addEventListener('load', function() {
 ⏰ Ora: ${time}
 👨‍💼 Stilisti: ${staffName}
 📝 Mesazh: ${message || "—"}
-      `;
+  `;
 
-      // Open WhatsApp
-      window.open(
-        "https://wa.me/" + staffNumber + "?text=" + encodeURIComponent(text),
-        "_blank"
-      );
-
-      console.log("[v0] WhatsApp opened successfully");
-      
-      // Reset form after successful booking
-      form.reset();
-      timeSelect.innerHTML = '<option value="">Zgjidhni orën</option>';
-
-    } catch (err) {
-      console.error("[v0] Booking failed:", err);
-      alert("Ky orar është tashmë i rezervuar. Ju lutemi zgjidhni një tjetër.");
-    }
-  });
+  window.open(
+    "https://wa.me/" + staffNumber + "?text=" + encodeURIComponent(text),
+    "_blank"
+  );
+});
 </script>
+
 <script>
 const dateInput = document.getElementById("bookingDate");
 const timeSelect = document.getElementById("timeSlots");
@@ -691,5 +598,6 @@ dateInput.addEventListener("change", function () {
 // Block past dates
 dateInput.min = new Date().toISOString().split("T")[0];
 </script>
+
 </body>
 </html>
