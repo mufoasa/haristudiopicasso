@@ -519,7 +519,7 @@ window.addEventListener('load', function() {
 <script type="module">
   // Firebase imports
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-  import { getFirestore, doc, runTransaction } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+  import { getFirestore, doc, runTransaction, collection, setDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 
   // Firebase configuration
   const firebaseConfig = {
@@ -537,12 +537,13 @@ window.addEventListener('load', function() {
   const db = getFirestore(app);
   console.log("[v0] Firebase initialized successfully");
 
-  // Function to lock a slot in Firestore using transaction
-  async function lockSlot(date, time, staffNumber) {
+  // Function to lock a slot and save reservation in Firestore using transaction
+  async function lockSlotAndSaveReservation(reservationData) {
+    const { date, time, staffNumber, name, phone, service, message, staffName } = reservationData;
     const slotId = `${date}_${time}_${staffNumber}`;
     const slotRef = doc(db, "slots", slotId);
 
-    console.log("[v0] Attempting to lock slot:", slotId);
+    console.log("[v0] Attempting to lock slot and save reservation:", slotId);
 
     return runTransaction(db, async (tx) => {
       const snap = await tx.get(slotRef);
@@ -553,6 +554,7 @@ window.addEventListener('load', function() {
         throw new Error("Slot already booked");
       }
 
+      // Lock the slot
       tx.set(slotRef, { 
         date, 
         time, 
@@ -560,7 +562,28 @@ window.addEventListener('load', function() {
         createdAt: new Date().toISOString(),
         timestamp: Date.now()
       });
-      console.log("[v0] Slot locked successfully!");
+
+      // Save full reservation details to reservations collection
+      const reservationId = `${Date.now()}_${slotId}`;
+      const reservationRef = doc(db, "reservations", reservationId);
+      
+      tx.set(reservationRef, {
+        id: reservationId,
+        slotId: slotId,
+        clientName: name,
+        clientPhone: phone,
+        service: service,
+        date: date,
+        time: time,
+        staffNumber: staffNumber,
+        staffName: staffName,
+        message: message || "",
+        status: "pending",
+        createdAt: new Date().toISOString(),
+        timestamp: Date.now()
+      });
+
+      console.log("[v0] Slot locked and reservation saved successfully!");
     });
   }
 
@@ -570,7 +593,8 @@ window.addEventListener('load', function() {
 
     const name = form.querySelector('[name="name"]').value.trim();
     const phone = form.querySelector('[name="phone"]').value.trim();
-    const service = form.querySelector('[name="service"]').value;
+    const serviceSelect = form.querySelector('[name="service"]');
+    const service = serviceSelect.options[serviceSelect.selectedIndex].text;
     const date = form.querySelector('[name="date"]').value;
     const time = form.querySelector('[name="time"]').value;
     const staffSelect = document.getElementById("staff");
@@ -578,7 +602,7 @@ window.addEventListener('load', function() {
     const staffName = staffSelect.options[staffSelect.selectedIndex].text;
     const message = form.querySelector('[name="message"]').value.trim();
 
-    if (!name || !phone || !service || !date || !time || !staffNumber) {
+    if (!name || !phone || !serviceSelect.value || !date || !time || !staffNumber) {
       alert("Ju lutemi plotësoni të gjitha fushat.");
       return;
     }
@@ -586,8 +610,10 @@ window.addEventListener('load', function() {
     console.log("[v0] Form validated, checking slot availability...");
 
     try {
-      // Check and lock slot in Firestore
-      await lockSlot(date, time, staffNumber);
+      // Check and lock slot, then save reservation in Firestore
+      await lockSlotAndSaveReservation({
+        date, time, staffNumber, name, phone, service, message, staffName
+      });
       console.log("[v0] Slot is free, proceeding to WhatsApp...");
 
       // Build WhatsApp message
@@ -609,6 +635,10 @@ window.addEventListener('load', function() {
       );
 
       console.log("[v0] WhatsApp opened successfully");
+      
+      // Reset form after successful booking
+      form.reset();
+      timeSelect.innerHTML = '<option value="">Zgjidhni orën</option>';
 
     } catch (err) {
       console.error("[v0] Booking failed:", err);
@@ -616,7 +646,6 @@ window.addEventListener('load', function() {
     }
   });
 </script>
-
 <script>
 const dateInput = document.getElementById("bookingDate");
 const timeSelect = document.getElementById("timeSlots");
@@ -662,6 +691,5 @@ dateInput.addEventListener("change", function () {
 // Block past dates
 dateInput.min = new Date().toISOString().split("T")[0];
 </script>
-
 </body>
 </html>
