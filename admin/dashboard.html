@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Barber Booking Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    th { background-color: #f4f4f4; }
+    button { padding: 5px 10px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Today's Bookings</h1>
+  <table id="bookings-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Barber</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script type="module">
+    // 1️⃣ Firebase imports
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+    import { getFirestore, collection, getDocs, deleteDoc, doc, query, where } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
+
+    // 2️⃣ Firebase config (your project)
+    const firebaseConfig = {
+      apiKey: "AIzaSyDpmPyRDHhHIsh-uWgC5RweqwplOXJBql0",
+      authDomain: "picasso-56a7f.firebaseapp.com",
+      projectId: "picasso-56a7f",
+      storageBucket: "picasso-56a7f.firebasestorage.app",
+      messagingSenderId: "895913212897",
+      appId: "1:895913212897:web:09779428d3811b1874f0a0",
+      measurementId: "G-HGBZLLZEN5"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // 3️⃣ Load today's bookings
+    async function loadBookings() {
+      const today = new Date().toISOString().split('T')[0]; // yyyy-mm-dd
+      const slotsRef = collection(db, "slots");
+      const q = query(slotsRef, where("date", "==", today));
+      const snapshot = await getDocs(q);
+
+      const tbody = document.querySelector("#bookings-table tbody");
+      tbody.innerHTML = "";
+
+      snapshot.forEach(docSnap => {
+        const data = docSnap.data();
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${data.date}</td>
+          <td>${data.time}</td>
+          <td>${data.staffNumber}</td>
+          <td><button data-id="${docSnap.id}">Cancel</button></td>
+        `;
+        tbody.appendChild(row);
+      });
+
+      // 4️⃣ Add cancel functionality
+      tbody.querySelectorAll("button").forEach(btn => {
+        btn.addEventListener("click", async () => {
+          if (confirm("Are you sure you want to cancel this booking?")) {
+            await deleteDoc(doc(db, "slots", btn.dataset.id));
+            loadBookings(); // refresh table
+          }
+        });
+      });
+    }
+
+    loadBookings();
+  </script>
+</body>
+</html>
