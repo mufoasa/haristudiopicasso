@@ -303,76 +303,42 @@ window.addEventListener('load', function() {
     </div>
   </section>
   
-<section class="section booking" id="booking">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-subtitle" data-translate="booking.subtitle">Rezervoni Vizitën Tuaj</span>
-      <h2 class="section-title" data-translate="booking.title">Caktoni Takim</h2>
-    </div>
-
-    <div class="booking-container">
-      <div class="booking-info">
-  <h3 data-translate="booking.infoTitle">Pse të na zgjidhni?</h3>
-  <ul class="booking-benefits">
-    <li data-translate="booking.benefit1">✓ Stilistë profesionistë me përvojë</li>
-    <li data-translate="booking.benefit2">✓ Produkte premium për flokët</li>
-    <li data-translate="booking.benefit3">✓ Ambient i rehatshëm dhe elegant</li>
-    <li data-translate="booking.benefit4">✓ Çmime konkurruese</li>
-  </ul>
-<div style="height: 80px;"></div>
-  <!-- New Information Section -->
-  <div class="booking-info-section">
-  <h3 data-translate="booking.infoSectionTitle">Informacion</h3>
-  <p data-translate="booking.reservationNote">
-    📌 Ne rekomandojmë që rezervimi të bëhet <strong>12-24 orë</strong> më herët për të siguruar disponueshmërinë.
-  </p>
-  <p data-translate="booking.whatsappNote">
-    📲 Rezervimi juaj do të konfirmohet nëpërmjet WhatsApp nga pjestari i stafit që keni zgjedhur.
-  </p>
-  <p data-translate="booking.invalidNote">
-    ⚠️ Rezervimi është <strong>jo valid</strong> deri në konfirmimin nga ekipi!
-  </p>
-  <p data-translate="booking.reminderNote">
-    ℹ️ Ju lutemi të jeni të saktë me orarin dhe shërbimin e zgjedhur për të siguruar një eksperiencë të rehatshme.
-  </p>
-</div>
-</div>
-
-
+  <!-- Booking Section -->
+  <section class="section booking" id="booking">
+    <div class="container">
+      <h2>Caktoni Takim</h2>
       <form class="booking-form" id="bookingForm">
-        <div class="form-group">
-          <label data-translate="booking.name">Emri i Plotë</label>
+        <div>
+          <label>Emri i Plotë</label>
           <input type="text" name="name" required>
         </div>
 
-        <div class="form-group">
-          <label data-translate="booking.phone">Numri i Telefonit</label>
+        <div>
+          <label>Numri i Telefonit</label>
           <input type="tel" name="phone" required>
         </div>
 
-     <select name="service" id="service" required>
-  <option value="" data-translate="booking.selectService">Zgjidhni shërbimin</option>
-</select>
+        <div>
+          <label>Shërbimi</label>
+         <select name="service" id="service" required> <option value="" data-translate="booking.selectService">Zgjidhni shërbimin</option> </select>
+        </div>
 
-        
-       <div class="form-group date-time">
-  <div>
-    <label data-translate="booking.date">Data</label>
-    <input type="date" id="bookingDate" name="date" required 
-           placeholder="" data-translate-placeholder="booking.datePlaceholder">
-  </div>
-  <div>
-    <label data-translate="booking.time">Ora</label>
-    <select id="timeSlots" name="time" required>
-      <option value="" data-translate="booking.selectTime">Zgjidhni orën</option>
-    </select>
-  </div>
-</div>
+        <div>
+          <label>Data</label>
+          <input type="date" id="bookingDate" name="date" required>
+        </div>
 
-        <div class="form-group">
-          <label data-translate="booking.staffLabel">Zgjidhni Stilistin</label>
+        <div>
+          <label>Ora</label>
+          <select id="timeSlots" name="time" required>
+            <option value="">Zgjidhni orën</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Zgjidhni Stilistin</label>
           <select name="staff" id="staff" required>
-            <option value="" data-translate="booking.selectStaff">Zgjidhni stilistin</option>
+            <option value="">Zgjidhni stilistin</option>
             <option value="38970601603">Arsim Shasivari (Master)</option>
             <option value="38970779720">Argjend Sulejmani (Senior)</option>
             <option value="38971900931">Adis Ismaili (Stylist)</option>
@@ -380,23 +346,126 @@ window.addEventListener('load', function() {
           </select>
         </div>
 
-        <div class="form-group">
-          <label data-translate="booking.message">Mesazh (Opsional)</label>
-          <textarea name="message" rows="4"></textarea>
+        <div>
+          <label>Mesazh (Opsional)</label>
+          <textarea name="message" rows="3"></textarea>
         </div>
 
-        <button type="button" id="whatsappBooking" class="btn btn-whatsapp btn-full" data-translate="booking.submit">
-          Dërgo Rezervimin (WhatsApp)
-        </button>
-        <p class="booking-confirmation-note"
-   data-translate="booking.confirmationNote">
-  ⏱️ Koha e rezervimit mund të jetë e zënë. Do t’ju kontaktojmë përmes WhatsApp për konfirmim.
-</p>
-
+        <button type="button" id="whatsappBooking">Dërgo Rezervimin (WhatsApp)</button>
       </form>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Firebase + Booking Script -->
+  <script type="module">
+    // 1️⃣ Firebase imports
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+    import { getFirestore, doc, runTransaction } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
+
+    // 2️⃣ Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyDpmPyRDHhHIsh-uWgC5RweqwplOXJBql0",
+      authDomain: "picasso-56a7f.firebaseapp.com",
+      projectId: "picasso-56a7f",
+      storageBucket: "picasso-56a7f.firebasestorage.app",
+      messagingSenderId: "895913212897",
+      appId: "1:895913212897:web:09779428d3811b1874f0a0",
+      measurementId: "G-HGBZLLZEN5"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // 3️⃣ Lock slot function
+    async function lockSlot(date, time, staffNumber) {
+      const slotId = `${date}_${time}_${staffNumber}`;
+      const slotRef = doc(db, "slots", slotId);
+
+      await runTransaction(db, async (tx) => {
+        const snap = await tx.get(slotRef);
+        if (snap.exists()) throw new Error("Slot already booked");
+
+        tx.set(slotRef, { date, time, staffNumber, createdAt: new Date() });
+      });
+    }
+
+    // 4️⃣ Time slots generator
+    const dateInput = document.getElementById("bookingDate");
+    const timeSelect = document.getElementById("timeSlots");
+    const OPEN_HOUR = 9;
+    const CLOSE_HOUR = 21;
+    const SLOT_INTERVAL = 30;
+
+    function generateTimeSlots(selectedDate) {
+      timeSelect.innerHTML = '<option value="">Zgjidhni orën</option>';
+      if (!selectedDate) return;
+
+      const now = new Date();
+      const selected = new Date(selectedDate);
+      const isToday = selected.toDateString() === now.toDateString();
+
+      for (let hour = OPEN_HOUR; hour < CLOSE_HOUR; hour++) {
+        for (let min = 0; min < 60; min += SLOT_INTERVAL) {
+          const slot = new Date(selected);
+          slot.setHours(hour, min, 0, 0);
+          if (isToday && slot <= now) continue;
+
+          const h = String(hour).padStart(2, "0");
+          const m = String(min).padStart(2, "0");
+          const option = document.createElement("option");
+          option.value = `${h}:${m}`;
+          option.textContent = `${h}:${m}`;
+          timeSelect.appendChild(option);
+        }
+      }
+    }
+
+    dateInput.addEventListener("change", () => generateTimeSlots(dateInput.value));
+    dateInput.min = new Date().toISOString().split("T")[0];
+
+    // 5️⃣ WhatsApp booking
+    document.getElementById("whatsappBooking").addEventListener("click", async () => {
+      const form = document.getElementById("bookingForm");
+      const name = form.querySelector('[name="name"]').value.trim();
+      const phone = form.querySelector('[name="phone"]').value.trim();
+      const service = form.querySelector('[name="service"]').value;
+      const date = form.querySelector('[name="date"]').value;
+      const time = form.querySelector('[name="time"]').value;
+      const staffSelect = document.getElementById("staff");
+      const staffNumber = staffSelect.value;
+      const staffName = staffSelect.options[staffSelect.selectedIndex].text;
+      const message = form.querySelector('[name="message"]').value.trim();
+
+      if (!name || !phone || !service || !date || !time || !staffNumber) {
+        alert("Ju lutemi plotësoni të gjitha fushat.");
+        return;
+      }
+
+      try {
+        // Lock slot in Firebase
+        await lockSlot(date, time, staffNumber);
+
+        const text = `
+📅 Rezervim i Ri
+👤 Klienti: ${name}
+📞 Telefoni: ${phone}
+💈 Shërbimi: ${service}
+📆 Data: ${date}
+⏰ Ora: ${time}
+👨‍💼 Stilisti: ${staffName}
+📝 Mesazh: ${message || "—"}
+        `;
+
+        window.open(
+          "https://wa.me/" + staffNumber + "?text=" + encodeURIComponent(text),
+          "_blank"
+        );
+      } catch {
+        alert("Ky orar është tashmë i rezervuar. Ju lutemi zgjidhni një tjetër.");
+      }
+    });
+  </script>
+
   <!-- Contact Section -->
   <section class="section contact" id="contact">
     <div class="container">
