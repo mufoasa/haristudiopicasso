@@ -508,11 +508,6 @@ var teamData = [
     roleKey: "team.role.colorist",
     image: "https://i.imgur.com/fgHl3aB.jpeg",
   },
-    {
-    name: "Adis Ismaili",
-    roleKey: "team.role.colorist",
-    image: "https://i.imgur.com/cYa7l8H.jpeg",
-  },
    {
     name: "Rilind Veliu",
     roleKey: "team.role.helper",
