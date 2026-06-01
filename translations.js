@@ -164,7 +164,7 @@ var translations = {
     "team.title": "Our Team",
     "team.role.master": "Master & Owner",
     "team.role.senior": "General Manager",
-    "team.role.colorist": "Stylist",
+    "team.role.colorist": "Senior Stylist",
     "team.role.helper": "Assistant",
 
     // Booking
