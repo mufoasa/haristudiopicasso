@@ -55,7 +55,7 @@ var translations = {
     "team.title": "Ekipi Ynë",
     "team.role.master": "Mjeshtër & Drejtor",
     "team.role.senior": "Menaxher I Përgjithshëm",
-    "team.role.colorist": "Stilues",
+    "team.role.colorist": "Stilues Senior",
     "team.role.helper": "Ndihmës",
 
     // Booking
@@ -274,7 +274,7 @@ var translations = {
 "team.title": "Нашиот Тим",
 "team.role.master": "Мајстор и Сопственик",
 "team.role.senior": "Генерален Менаџер",
-"team.role.colorist": "Стилист",
+"team.role.colorist": "Стилист Senior",
 "team.role.helper": "Помошник",
 
     // Booking
